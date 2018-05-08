@@ -1,0 +1,13 @@
+首先找到配置文件中启动web server的地方。
+
+然后在server里面配置
+
+"proxy": {
+       '/csc-administration': { // 当访问路径中有name，就会转发;
+            target: 'http://test.changhong.com',
+            // changeOrigin: true, // 允许跨域
+            pathRewrite: {
+              '^/csc-administration': '/csc-administration'
+            }
+        }
+    }

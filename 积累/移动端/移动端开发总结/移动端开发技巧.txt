@@ -1,0 +1,150 @@
+1、添加到主屏后的标题(ios)
+
+<meta name="apple-mobile-web-app-title" content="标题">
+
+-----------------------------------------------------------
+
+2、启用Webapp全屏模式(ios)
+
+当网站添加到主屏幕后再点击进行启时，可隐藏地址栏（从浏览器跳转或输入链接进入并没有此效果）
+
+<meta name="app-mobile-web-app-capable" content="yes" />
+<meta name="app-touch-fullscreen" content="yes" /> 
+
+-----------------------------------------------------------
+
+3、百度禁止转码
+
+通过百度手机打开网站时，百度会给你的网站进行转码，向你的页面添加广告,可以通过meta标签禁止.
+
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+-----------------------------------------------------------
+
+4、设置状态栏的背景颜色(ios)
+
+设置状态栏的背景颜色，只有在“apple-mobile-web-app-capable” content="yes" 时生效。
+
+<meta name="apple-mobile-web-app-status-bar-style" content="back-translucent" />
+
+content参数：
+
+default: 白色
+
+black: 黑色
+
+black-translucent: 状态栏背景是半透明。 如果设置为 default 或 black ,网页内容从状态栏底部开始。 如果设置为 black-translucent ,网页内容充满整个屏幕，顶部会被状态栏遮挡。
+
+-----------------------------------------------------------
+
+5、移动端手机号码识别(ios)
+
+在ios Safari (其它浏览器不会) 上会对那些看起来像是电话号码的数字处理为电话链接，
+
+可以通过如下的neat来关闭电话号码的自动识别：
+
+<meta name="format-detection" content="telephone=no" />
+
+开启电话功能
+
+<a href="tel:123456">123456</a>
+
+开启短信功能：
+
+<a href="sms:123456">123456</a>
+
+-----------------------------------------------------------
+
+6、移动端邮箱识别(Android)
+
+与电话号码的识别一样，在安卓上会对符合邮箱格式的字符串进行识别，可以通过meta来管别邮箱的自动识别：
+
+<meta content="email=no" name="format-detection" />
+
+可以通过标签属性来开启长按邮箱地址弹出邮箱发送的功能：
+
+<a href="mailto:dooyoe@gmail.com">dooyoe@gmail.com</a>
+
+-----------------------------------------------------------
+
+7、添加智能App广告条Smart App Banner（IOS 6+ Safari）
+
+<meta name="apple-itunes-app" content="app-id=myAppStoreID,affiliate-data=myAffiliateDate,app-argument=myURL">
+
+-----------------------------------------------------------
+
+8、IOS Web app启动动画
+
+由于ipad的启动动画是不包括状态栏区域的。所以启动图片需要减去状态栏区域所对应的方向上的20px大小，相应地在retina设备上要减去40px的大小。
+
+<link href="/images" media="(device-width:320px)" rel="apple-touch-startup-image">
+
+<link href="/images" media="(device-width:320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+<link href="/images" media="(device-width:768px) and (orientation: portrait)" rel="apple-touch-start">
+
+<link href="/images" media="(device-width:768px) and (orientation: landscape)" rel="apple-touch-startup-image">
+
+<link href="/images" media="(device-width:1536px) and(orientation:portrait) and (-webkit-device-pixel-ratio:2)" rel="apple-touch-startup-image">
+
+<link href="/images" media="(device-width:1536) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+orientation: landscape: 横屏
+
+orientation: portrait : 竖屏
+
+-----------------------------------------------------------
+
+9、添加到主屏后的APP图标
+
+指定web app添加到主屏后的图标路径，有两种略微不同方式：
+
+<!--设计原图-->
+
+<link href="short_cut_114*114.png" rel="apple-touch-icon-precomposed">
+
+<!--添加高光效果-->
+
+<link href="short_cut_114*114.png" rel="apple-touch-icon">
+
+apple-touch-icon：在IOS6及以下的版本会自动为图标添加一层高光效果（IOS7开始已使用扁平化的设计风格） 
+
+apple-touch-icon-precomposed：使用“设计原图图标”
+
+图标尺寸： 可通过指定size属性来为不同的设备提供不同的图标（但通常来说，我们只需提供一个114 x 114 pixels大小的图标即可 ）
+
+-----------------------------------------------------------
+
+10、优先使用最新版本IE和chrome
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+-----------------------------------------------------------
+
+11、viewport模板
+
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"> 
+<meta content="yes" name="apple-mobile-web-app-capable"> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style"> 
+<meta content="telephone=no" name="format-detection"> 
+<meta content="email=no" name="format-detection"> 
+<title>标题</title> 
+<link rel="stylesheet" href="index.css"> 
+</head> 
+<body> 
+这里开始内容 
+</body> 
+</html>
+
+-----------------------------------------------------------
+
+
+
+
+
+
+
+

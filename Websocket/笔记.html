@@ -1,0 +1,176 @@
+<!doctype html><html><head><meta charset='utf-8'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.4.1/github-markdown.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+  <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css">
+  <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css">
+  
+  </head><body class="markdown-body">
+  <h2 data-line="NaN" class="code-line" id="">简介</h2>
+  <p data-line="NaN" class="code-line">WebSocket 协议在2008年诞生，2011年成为国际标准。所有浏览器都已经支持了。</p>
+  <p data-line="NaN" class="code-line">它的最大特点就是，服务器可以主动向客户端推送信息，客户端也可以主动向服务器发送信息，是真正的双向平等对话，属于服务器推送技术的一种。</p>
+  <p data-line="NaN" class="code-line">其他特点包括：</p>
+  <p data-line="NaN" class="code-line">（1）建立在 TCP 协议之上，服务器端的实现比较容易。</p>
+  <p data-line="NaN" class="code-line">（2）与 HTTP 协议有着良好的兼容性。默认端口也是80和443，并且握手阶段采用 HTTP 协议，因此握手时不容易屏蔽，能通过各种 HTTP 代理服务器。</p>
+  <p data-line="NaN" class="code-line">（3）数据格式比较轻量，性能开销小，通信高效。</p>
+  <p data-line="NaN" class="code-line">（4）可以发送文本，也可以发送二进制数据。</p>
+  <p data-line="NaN" class="code-line">（5）没有同源限制，客户端可以与任意服务器通信。</p>
+  <p data-line="NaN" class="code-line">（6）协议标识符是ws（如果加密，则为wss），服务器网址就是 URL。</p>
+  <pre class="hljs"><code><div>ws:<span class="hljs-comment">//example.com:80/some/path</span>
+  </div></code></pre>
+  <h2 data-line="NaN" class="code-line" id="">客户端的简单示例</h2>
+  <p data-line="NaN" class="code-line">WebSocket 的用法相当简单。</p>
+  <pre class="hljs"><code><div><span class="hljs-keyword">var</span> ws = <span class="hljs-keyword">new</span> WebSocket(<span class="hljs-string">"wss://echo.websocket.org"</span>);
+  
+  ws.onopen = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">evt</span>) </span>{ 
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Connection open ..."</span>); 
+    ws.send(<span class="hljs-string">"Hello WebSockets!"</span>);
+  };
+  
+  ws.onmessage = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">evt</span>) </span>{
+    <span class="hljs-built_in">console</span>.log( <span class="hljs-string">"Received Message: "</span> + evt.data);
+    ws.close();
+  };
+  
+  ws.onclose = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">evt</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Connection closed."</span>);
+  };      
+  </div></code></pre>
+  <h2 data-line="NaN" class="code-line" id="api">客户端API</h2>
+  <h3 data-line="NaN" class="code-line" id="websocket">websocket构造函数</h3>
+  <p data-line="NaN" class="code-line">websocket对象作为一个构造函数，用于新建websocket实例</p>
+  <pre class="hljs"><code><div><span class="hljs-keyword">var</span> ws = <span class="hljs-keyword">new</span> Websocket(<span class="hljs-string">'ws://localhost:8080'</span>)
+  </div></code></pre>
+  <p data-line="NaN" class="code-line">执行上面语句之后，客户端就会与服务器进行连接。</p>
+  <h3 data-line="NaN" class="code-line" id="websocketreadystate">Websocket.readyState</h3>
+  <p data-line="NaN" class="code-line">readyState属性返回实例对象的当前状态，共有四种。</p>
+  <pre class="hljs"><code><div>- CONNECTING: 值为0，表示正在连接
+  - OPEN: 值为1，表示连接成功，可以通信了。
+  - CLOSING: 值为2，表示连接正在关闭
+  - CLOSED: 值为3，表示连接已经关闭，或者打开连接失败
+  </div></code></pre>
+  <p data-line="NaN" class="code-line">下面是一个示例</p>
+  <pre class="hljs"><code><div><span class="hljs-keyword">switch</span> (ws.readyState) {
+    <span class="hljs-keyword">case</span> WebSocket.CONNECTING:
+      <span class="hljs-comment">// do something</span>
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> WebSocket.OPEN:
+      <span class="hljs-comment">// do something</span>
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> WebSocket.CLOSING:
+      <span class="hljs-comment">// do something</span>
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> WebSocket.CLOSED:
+      <span class="hljs-comment">// do something</span>
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-comment">// this never happens</span>
+      <span class="hljs-keyword">break</span>;
+  }
+  </div></code></pre>
+  <h3 data-line="NaN" class="code-line" id="websocketonopen">websocket.onopen</h3>
+  <p data-line="NaN" class="code-line">实例对象的onopen属性，用于指定连接成功后的回调函数。</p>
+  <pre class="hljs"><code><div>ws.onopen = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    ws.send(<span class="hljs-string">'Hello Server!'</span>)
+  }
+  </div></code></pre>
+  <p data-line="NaN" class="code-line">如果要指定多个回调函数，可以使用addEventListener方法。</p>
+  <pre class="hljs"><code><div>ws.addEventListener(<span class="hljs-string">'open'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    ws.send(<span class="hljs-string">'Hello Server!'</span>);
+  })
+  </div></code></pre>
+  <h3 data-line="NaN" class="code-line" id="websocketonclose">websocket.onclose</h3>
+  <p data-line="NaN" class="code-line">实例对象的onclose属性，用于指定连接关闭后的回调函数。</p>
+  <pre class="hljs"><code><div>ws.onclose = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-keyword">var</span> code = event.code;
+    <span class="hljs-keyword">var</span> reason = event.reason;
+    <span class="hljs-keyword">var</span> wasClean = event.wasClean;
+  }
+  
+  ws.addEventListener(<span class="hljs-string">"close"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-keyword">var</span> code = event.code;
+    <span class="hljs-keyword">var</span> reason = event.reason;
+    <span class="hljs-keyword">var</span> wasClean = event.wasClean;
+    <span class="hljs-comment">// handle close event</span>
+  });
+  </div></code></pre>
+  <h3 data-line="NaN" class="code-line" id="websocketonmessage">webSocket.onmessage</h3>
+  <p data-line="NaN" class="code-line">实例对象的onmessage属性，用于指定收到服务器数据后的回调函数。</p>
+  <pre class="hljs"><code><div>ws.onmessage = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-keyword">var</span> data = event.data;
+    <span class="hljs-comment">// 处理数据</span>
+  }
+  
+  ws.addEventListener(<span class="hljs-string">"message"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-keyword">var</span> data = event.data;
+    <span class="hljs-comment">// 处理数据</span>
+  });
+  </div></code></pre>
+  <p data-line="NaN" class="code-line">注意，服务器数据可能是文本，也可能是二进制数据（blob对象或Arraybuffer对象）。</p>
+  <pre class="hljs"><code><div>ws.onmessage = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> event.data === <span class="hljs-built_in">String</span>) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Received data string"</span>);
+    }
+  
+    <span class="hljs-keyword">if</span> (event.data <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">ArrayBuffer</span>) {
+      <span class="hljs-keyword">var</span> buffer = event.data;
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Received arraybuffer"</span>);
+    }
+  }
+  </div></code></pre>
+  <p data-line="NaN" class="code-line">除了动态判断收到的数据类型，也可以使用binaryType属性，显式指定收到的二进制数据类型</p>
+  <pre class="hljs"><code><div><span class="hljs-comment">// 收到的是 blob 数据</span>
+  ws.binaryType = <span class="hljs-string">"blob"</span>;
+  ws.onmessage = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(e.data.size);
+  };
+  
+  <span class="hljs-comment">// 收到的是 ArrayBuffer 数据</span>
+  ws.binaryType = <span class="hljs-string">"arraybuffer"</span>;
+  ws.onmessage = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(e.data.byteLength);
+  };
+  </div></code></pre>
+  <h3 data-line="NaN" class="code-line" id="websocketsend">webSocket.send()</h3>
+  <p data-line="NaN" class="code-line">实例对象的send()方法用于服务器发送数据。</p>
+  <p data-line="NaN" class="code-line">发送文本的例子</p>
+  <pre class="hljs"><code><div>ws.send(<span class="hljs-string">'your message'</span>)
+  </div></code></pre>
+  <p data-line="NaN" class="code-line">发送Blob对象的例子。</p>
+  <pre class="hljs"><code><div><span class="hljs-keyword">var</span> file = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'input[type="file"]'</span>).files[<span class="hljs-number">0</span>]
+  
+  ws.send(file);
+  </div></code></pre>
+  <p data-line="NaN" class="code-line">发送ArrayBuffer对象的例子。</p>
+  <pre class="hljs"><code><div><span class="hljs-comment">// 将canvas ImageData作为ArrayBuffer发送</span>
+  
+  <span class="hljs-keyword">var</span> img = canvas_content.getImageData(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">400</span>,<span class="hljs-number">320</span>);
+  <span class="hljs-keyword">var</span> binary = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>(img.data.length);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; img.data.length; i++) {
+    binary[i] = img.data[i];
+  }
+  ws.send(binary.buffer);
+  </div></code></pre>
+  <h3 data-line="NaN" class="code-line" id="websocketbufferedamount">webSocket.bufferedAmount</h3>
+  <p data-line="NaN" class="code-line">实例对象的bufferedAmount属性，表示还有多少字节的二进制数据没有发送出去，它可以用来判断发送是否结束。</p>
+  <pre class="hljs"><code><div><span class="hljs-keyword">var</span> data = <span class="hljs-keyword">new</span> <span class="hljs-built_in">ArrayBuffer</span>)(<span class="hljs-number">10000000</span>);
+  socket.send(data)
+  
+  <span class="hljs-keyword">if</span> (socket.bufferedAmount === <span class="hljs-number">0</span>) {
+    <span class="hljs-comment">// 发送完毕</span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// 发送还没结束</span>
+  }
+  </div></code></pre>
+  <h3 data-line="NaN" class="code-line" id="websocketonerroe">webSocket.onerroe</h3>
+  <p data-line="NaN" class="code-line">实例对象的onerror属性，用于指定报错时的回调函数。</p>
+  <pre class="hljs"><code><div>socket.onerror = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// handle error event</span>
+  };
+  
+  socket.addEventListener(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// handle error event</span>
+  })
+  </div></code></pre>
+  
+  </body></html>

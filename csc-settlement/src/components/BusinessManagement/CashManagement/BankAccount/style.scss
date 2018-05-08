@@ -1,0 +1,187 @@
+// 银行对账模块
+.bank-account {
+  padding: 20px;
+
+  // 包装容器
+  &-wrapper {
+
+  }
+
+  // 头部容器
+  &-hd {
+
+  }
+  .bank-account-title{
+    font-size: 16px;
+  }
+  // 内容容器
+  &-bd {
+    padding: 10px 0;
+  }
+
+  // 底部容器
+  &-ft {
+    margin-top: 15px;
+  }
+
+  // 标题部分
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  // 工具条
+  &-toolbar {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // 表格
+  &-table {
+    margin-top: 15px;
+  }
+
+  // 上传组件
+  &-uploader {
+
+    &__list {
+      padding: 5px 0;
+
+      dt {
+        margin-bottom: 15px;
+      }
+
+      dd {
+        position: relative;
+        margin: 15px 0;
+        padding-left: 40px;
+      }
+    }
+  }
+
+  // 搜索组件
+  .search-conditions {
+    display: inline-block;
+    margin-right: 20px;
+
+    &-item {
+      display: inline-block;
+      margin-right: 5px;
+
+      .ant-input {
+        width: auto;
+      }
+    }
+
+    // tree组件样式补丁
+    .Org-Css {
+      vertical-align: -9px;
+    }
+    .org-h-droplist {
+      height: 28px;
+    }
+    .dp-filter {
+      padding: 5px 0;
+
+      .ant-input {
+        width: 100%;
+      }
+    }
+  }
+
+  // 弹窗样式
+  &-modal {
+
+    .ant-modal-body {
+      padding: 0 20px;
+    }
+
+    .ant-modal-footer {
+      border-top: none;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+  }
+
+  .ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+    padding: 10px 8px;
+  }
+}
+
+.bank-pagination {
+  padding: 20px 0;
+  text-align: center;
+
+  .ant-pagination {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+  }
+}
+
+.form-modal {
+
+  &-row {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+    &__label {
+      width: 110px;
+      text-align: right;
+
+      &.required:before {
+        content: '*';
+        vertical-align: middle;
+        margin-right: 2px;
+        color: #F00;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.table-option {
+  text-align: center;
+  
+  a {
+    margin: 0 5px;
+    padding: 2px 5px;
+    color: #23b8f6;
+    cursor: pointer;
+  }
+}
+
+// 余额调节表
+.table-bank-balance {
+
+  &__btns {
+    min-width: 1200px;
+    margin-top: 30px;
+    text-align: center;
+
+    .ant-btn {
+      margin: 0 15px;
+    }
+  }
+}
+
+// 银企对账表
+.bank-check-container {
+  width: 100%;
+  overflow: auto;
+}
+
+.bank-check-table {
+  min-width: 1200px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    width: 48%;
+  }
+}

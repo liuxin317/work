@@ -1,0 +1,36 @@
+.menu-group dd {
+	width: 175px;
+	padding-left: 25px;
+	text-align: left;
+	background: white url(../images/icon_08.png) no-repeat 180px center;
+}
+.menu-group dd:hover {
+	background-color: #f9f9f9 url(../images/icon_08.png) no-repeat 180px center;
+}
+.menu-group dd.active a,
+.menu-group dd.active a:hover{
+	background: #f9f9f9 url(../images/icon_09.png) no-repeat 155px center;
+}
+.menu-group dd.active {
+	background: #f9f9f9;
+}
+.sub-menu {
+	display: none;
+}
+.sub-menu dd {
+	width: 165px;
+	padding-left: 35px;
+	border-bottom: #dde4e7 dashed 1px;
+	background: white url(../images/icon_02.png) no-repeat 180px center / 5px 5px;
+}
+.sub-menu dd:last-of-type {
+	border-bottom: #dde4e7 solid 1px;
+}
+.sub-menu dd:hover,
+.sub-menu dd.on {
+	background: #f9f9f9 url(../images/icon_01.png) no-repeat 180px center / 5px 5px;
+}
+.sub-menu dd a:hover,
+.menu-group dd a:hover {
+	background: none;
+}

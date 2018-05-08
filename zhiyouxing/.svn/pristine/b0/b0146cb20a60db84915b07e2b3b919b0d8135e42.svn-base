@@ -1,0 +1,30 @@
+.num-group {
+	margin-top: .15rem;
+	margin-left: 1rem;
+}
+.num-group button {
+	display: block;
+	width: .62rem;
+	height: .62rem;
+	text-align: center;
+	line-height: .62rem;
+	font-size: .4rem;
+	color: white;
+	border: none;
+	border-radius: .1rem;
+	background-color: #7ed321;
+}
+.num-group input {
+	width: .9rem;
+	height: .6rem;
+	margin: 0 .3rem;
+	text-align: center;
+	line-height: .6rem;
+	font-size: .36rem;
+	color: #7ed321;
+	border: #7ed321 solid 1px;
+	border-radius: .1rem;
+}
+.listed-group li.no-border-bottom {
+	border: none;
+}

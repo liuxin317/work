@@ -1,0 +1,101 @@
+移动端页头加载代码：
+<meta charset="gb2312"/>网页的编码语言
+<meta name="robots" content="all">机器人向导页面是否需要索引
+<meta name="keywords" content="" />页面关键词
+<meta name="description" content="" />页面描述
+<meta http-equiv="X-UA-Compatible" content="IE=edge">以最高方式来进行渲染
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">规定窗口的宽度，加载比例，最大缩放比例，是否进行手动放大；
+<meta name="renderer" content="webkit|ie-comp|ie-stand">渲染内核来处理当前的页面;分别是急速、IE兼容、IE标准
+<meta http-equiv="cache-control" content="no-siteapp"/>进入网页时百度会为你的网站进行转码，从而达到很好的搜索排名;
+<meta name="viewport" content="width=640, target-densitydpi=255">指定其显示窗口大小，强制内核以255排版，更加精细；
+
+
+
+二、允许网页宽度自动调整
+
+"自适应网页设计"到底是怎么做到的？其实并不难。
+
+首先，在网页代码的头部，加入一行viewport元标签。
+
+　　<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+viewport是网页默认的宽度和高度，上面这行代码的意思是，网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积的100%。
+
+所有主流浏览器都支持这个设置，包括IE9。对于那些老式浏览器（主要是IE6、7、8），需要使用css3-mediaqueries.js。
+
+　　<!--[if lt IE 9]>
+　　　　<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+　　<![endif]-->
+
+
+三、不使用绝对宽度
+
+由于网页会根据屏幕宽度调整布局，所以不能使用绝对宽度的布局，也不能使用具有绝对宽度的元素。这一条非常重要。
+
+具体说，CSS代码不能指定像素宽度：
+
+　　width:xxx px;
+
+只能指定百分比宽度：
+
+　　width: xx%;
+
+或者
+
+　　width:auto;
+
+
+四、相对大小的字体
+
+字体也不能使用绝对大小（px），而只能使用相对大小（em）。
+
+　　body {
+　　　　font: normal 100% Helvetica, Arial, sans-serif;
+　　}
+
+上面的代码指定，字体大小是页面默认大小的100%，即16像素。
+
+
+六、选择加载CSS
+
+"自适应网页设计"的核心，就是CSS3引入的Media Query模块。
+
+它的意思就是，自动探测屏幕宽度，然后加载相应的CSS文件。
+
+　　<link rel="stylesheet" type="text/css"
+　　　　media="screen and (max-device-width: 400px)"
+　　　　href="tinyScreen.css" />
+
+上面的代码意思是，如果屏幕宽度小于400像素（max-device-width: 400px），就加载tinyScreen.css文件。
+
+　　<link rel="stylesheet" type="text/css"
+　　　　media="screen and (min-width: 400px) and (max-device-width: 600px)"
+　　　　href="smallScreen.css" />
+
+如果屏幕宽度在400像素到600像素之间，则加载smallScreen.css文件。
+
+除了用html标签加载CSS文件，还可以在现有CSS文件中加载。
+
+　　@import url("tinyScreen.css") screen and (max-device-width: 400px);
+
+
+
+七、CSS的@media规则
+
+同一个CSS文件中，也可以根据不同的屏幕分辨率，选择应用不同的CSS规则。
+
+　　@media screen and (max-device-width: 400px) {
+
+　　　　.column {
+　　　　　　float: none;
+　　　　　　width:auto;
+　　　　}
+
+　　　　#sidebar {
+　　　　　　display:none;
+　　　　}
+
+　　}
+
+上面的代码意思是，如果屏幕宽度小于400像素，则column块取消浮动（float:none）、宽度自动调节（width:auto），sidebar块不显示（display:none）。
+

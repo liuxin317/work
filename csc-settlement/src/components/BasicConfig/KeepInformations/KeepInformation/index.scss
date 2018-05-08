@@ -1,0 +1,126 @@
+.keep-information{
+  .search-input{
+    width: 200px;
+  }
+}
+.order-type-icon {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  float: left;
+  line-height: 34px;
+  text-align: center;
+  vertical-align: top;
+  /*border: solid 1px $primary-color;
+  border-radius: 50%;*/
+  background: url(../../../../imgs/delay.png) center center no-repeat;
+  /*transform: rotate(-45deg);*/
+
+  &.freeze {
+    background: url(../../../../imgs/freeze.png) center center no-repeat;
+    background-size: 100%;
+    /*color: #d92109;
+    border-color: #d92109;*/
+  }
+}
+.keepOpreate-style{
+  margin-right: 6px;
+}
+.detail{
+  margin-left: 90px;
+  .row {
+    font-size: 12px;
+    width: 500px;
+    margin: auto;
+  }
+  .desc {
+    display: inline-block;
+    width: 140px;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 28px;
+  }
+  .detail-item {
+    display: inline-block;
+    width: 280px;
+    line-height: 28px;
+    vertical-align: top;
+  }
+}
+.keepInformation-log{
+  .edit{
+    margin-bottom: 10px;
+    span{
+      margin-right: 20px;
+
+    }
+    font-size: 14px;
+  }
+  .info{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    div{
+      margin: 10px 0px;
+    }
+    span{
+      margin-left: 15px;
+    }
+  }
+  .editor-row {
+    height: 46px;
+    padding-left: 10px;
+    margin-top: 15px;
+    line-height: 46px;
+    background-color: #f0f3f5;
+  }
+  .hl-blue {
+    color: #23b8f6;
+  }
+  .diff-row {
+    height: 34px;
+    padding-left: 10px;
+    line-height: 34px;
+    &:nth-child(2n) {
+      background-color: #e1e4e6;
+    }
+  }
+  .diff-nm {
+    width: 130px;
+    vertical-align: middle;
+  }
+  .ori-val {
+    width: 226px;
+    vertical-align: middle;
+  }
+  .chg {
+    width: 55px;
+    vertical-align: middle;
+  }
+  .hl-red {
+    width: 226px;
+    vertical-align: middle;
+    color: #f00;
+  }
+  .img-wrapper {
+    position: relative;
+  }
+  .thumb {
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+    margin-top: 2px;
+  }
+  .big-img {
+    display: none;
+    width: 100px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(128,128,128,0.3);
+  }
+  .thumb:hover + .big-img {
+    display: inline-block;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+  }
+}

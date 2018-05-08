@@ -1,0 +1,21 @@
+.listed-group li {
+	position: relative;
+	margin: .2rem 0;
+	padding: .2rem;
+	background-color: white;
+}
+.img-group img {
+	width: 35%;
+	height: 1.8rem;
+}
+.img-intro {
+	width: 60%;
+	font-size: .3rem;
+	color: #606060;
+}
+.img-intro p {
+	margin-bottom: .05rem;
+}
+.img-intro p em{
+	color: #ff9414;
+}

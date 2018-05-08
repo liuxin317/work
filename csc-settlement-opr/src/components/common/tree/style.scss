@@ -1,0 +1,323 @@
+.dropdown-box {
+    position: relative;
+
+    .organization {
+        line-height: 35px;
+    }
+    .organization label {
+        font-size: 14px;
+        color: #333;
+    }
+    .organization input.first-child {
+        width: 100%;
+        background-color: white;
+        cursor: pointer;
+        height: 35px;
+        padding-left: 10px;
+        border: solid 1px #ccc;
+        position: relative;
+        display: inline-block;
+        border-radius: 4px;
+    }
+    .organization .organization-input {
+        position: relative;
+        width: 200px;
+    }
+    .organization .organization-input a.btm {
+        position: absolute;
+        top: 49%;
+        right: 1px;
+        width: 33px;
+        height: 32px;
+        text-align: center;
+        transform: translate(0, -50%);
+        -webkit-transform: translate(0, -50%);
+        -moz-transform: translate(0, -50%);
+        -o-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        cursor: pointer;
+        background: white;
+        
+        img {
+            width: 25px;
+            vertical-align: middle;
+        }
+    }
+    .dorpdown-content {
+        position: absolute;
+        left: 0;
+        top: 36px;
+        z-index: 9;
+        /* height: 280px; */
+        padding: 10px 10px 0 0;
+        /*overflow: auto;*/
+        border: 1px solid #ddd;
+        background-color: white;
+        transition: .1s ease-in;
+        -webkit-transition: .1s ease-in;
+        -moz-transition: .1s ease-in;
+        -o-transition: .1s ease-in;
+        -ms-transition: .1s ease-in;
+    }
+    .dropdown .dorpdown-content.active,
+    .dorpdown-content.active {
+        padding: 0;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -o-opacity: 0;
+        -ms-opacity: 0;
+        overflow: hidden;
+    }
+    .dropdown {
+        margin-top: 20px;
+    }
+    .dropdown .organization {
+        float: none;
+        margin-left: 0;
+    }
+    .dropdown .dropdown-box {
+        float: none;
+    }
+    .job-box h4 {
+        font-size: 16px;
+        color: #333;
+        font-weight: normal;
+    }
+    .job-group {
+        margin-top: 20px;
+    }
+    .job-navbar {
+        width: 30%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        overflow-x: auto; 
+    }
+    .job-content {
+        width: 65%;
+    }
+    .job-pop.active {
+        display: block;
+    }
+    .job-pop .pop-group {
+        padding: 30px 10px 20px;
+    }
+    .job-pop .pop-group .pop-input-group:first-of-type input {
+        border: none;
+        padding-left: 0px;
+    }
+    .pop-input-group {
+        margin-bottom: 15px;
+        padding: 0 30px;
+    }
+    .pop-input-group label {
+        width: 20%;
+        line-height: 40px;
+        text-align: right;
+        font-size: 14px;
+        color: #333;
+    }
+    .pop-input-group input {
+        width: 75%;
+        height: 40px;
+        padding-left: 10px;
+        border: 1px solid #ccc;
+        background-color: white;
+        font-size: 14px;
+        color: #333;
+    }
+    .job-pop .btn-group {
+        margin-top: 30px;
+        text-align: center;
+        padding-left: 38px;
+    }
+    .job-content .list-group {
+        margin-top: 15px;
+    }
+    .job-content .list-group ol li p.phone-style,
+    .job-content .list-group ol li p.admin-style {
+        margin-top: 10px;
+    }
+    .job-navbar .ant-tree li .ant-tree-node-content-wrapper {
+        padding: 0 5px;
+    }
+    .job-navbar .ant-tree li {
+        line-height: 25px;
+    }
+    .job-navbar .ant-tree-title {
+        font-size: 16px;
+    }
+    #job_search input.search-info {
+        font-size: 14px;
+    }
+    .job-content .list-group ol li p {
+        margin-left: 0;
+    }
+    .job-content .list-group ol li .pull-right {
+        margin-top: 15px;
+    }
+    .dorpdown-content .ant-tree li .ant-tree-node-content-wrapper {
+        padding: 0 5px 0 0px;
+        top: 3px;
+    }
+    .dorpdown-content .ant-tree li {
+        position: relative;
+        line-height: 25px;
+    }
+    .postions li:hover {
+        background-color: #f5f5f5;
+        cursor: pointer;
+    }
+    .postions li a {
+        display: block;
+        width: 98%;
+    }
+    .tree-box {
+        width: 100%;
+        padding: 15px 15px 0;
+        /* border: 1px solid #ccc; */
+    }
+    .tree-box .tree-group {
+        position: relative;
+        width: 288px;
+        max-height: 300px;
+        overflow: auto; 
+    }
+    .tree-box .tree {
+        width: 100%;
+        padding-left: 20px;
+    }
+    .tree-box .tree li {
+        width: 100%;
+        line-height: 30px;
+        white-space: nowrap;
+    }
+    .tree-box .tree li a {
+        font-size: 16px;
+        color: #666;
+    }
+    .tree-box .tree li .expanding {
+        width: 16px;
+        height: 30px;
+    }
+    .tree-box .tree li .expanding img {
+        vertical-align: middle;
+        font-size: 0;
+    }
+    .tree-box .tree li .check {
+        position: relative;
+        width: 88%;
+        margin-top: 1px;
+    }    
+    .tree-box .tree li .check span {
+        margin-top: 2px;
+    }
+    .tree-box .tree li .check .name {
+        margin-left: 5px;
+    }
+    .tree-box .tree li .check .name.active-marg {
+        margin-left: 32px;
+    }
+    .tree-box .tree li .check span.active {
+        color: #4395FF;
+    }
+    .tree-box .tree li .check img {
+        top: 10px;
+        vertical-align: middle;
+        font-size: 0;
+        left: 10px;
+        position: absolute;
+    }
+    .retract-box .tree {
+        display: none;
+    }
+    .retract-box .tree:first-child {
+        display: block;
+    }
+    .search-input-group {
+        margin-bottom: 20px;
+    }
+    .tree-box .search-input {
+        display: block;
+        margin-bottom: 10px;
+        line-height: 35px;
+        padding-left: 10px;
+        border: 1px solid #ccc;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+        display: inline-block;
+        padding: 4px 11px;
+        width: 100%;
+        height: 32px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, 0.65);
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .tree-box .choose-subset {
+        position: absolute;
+        top: 54px;
+        right: 0;
+        z-index: 100;
+        width: 30%;
+        height: 35px;
+        line-height: 35px;
+        text-align: right;
+    }
+    .tree-box .choose-subset img {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    .tree-box .choose-subset .subset-name {
+        font-size: 14px;
+        color: #666;
+        vertical-align: middle;
+    }
+    .tree-box .choose-subset .subset-name.active {
+        color: #4395FF;
+    }
+    .input-row label em {
+        color: red;
+    }
+    .pop-group .tree-box .search-input {
+        width: 98%;
+    }
+    .pop-group .postions .dorpdown-content {
+        z-index: 10;
+    }
+    .postions li a {
+        width: 90%;
+        font-size: 16px;
+        color: #666;
+        padding-left: 20px;
+    }
+    .postions .tree-box .tree li .expanding {
+        display: none;
+    }
+    .pop-group .zhuzhi .dorpdown-content {
+        z-index: 15;
+    }
+    .jx-admin .ant-tree {
+        position: relative;
+        z-index: 5;
+    }
+    .pop-group .zhuzhi.active {
+        display: none;
+    }
+}

@@ -1,0 +1,117 @@
+@import "../../../../../vars";
+.trans-histroy {
+  .bank-Id{
+    margin-left: 30px;
+  }
+  /*.ant-radio-button-wrapper {
+    color: #000;
+    background-color: #999;
+  }
+  .ant-radio-button-wrapper-checked {
+    color: #000;
+    background-color: $primary-color;
+  }*/
+  .common-margin15 {
+    margin-top: 15px;
+  }
+
+  .search-item-common {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+  .search-input {
+    @extend .search-item-common;
+    width: 200px;
+  }
+  .search-select {
+    @extend .search-item-common;
+    width: 60px;
+  }
+  .search-time-range {
+    @extend .search-item-common;
+    display: inline-block;
+    width: 210px;
+    margin-left: 0px;
+  }
+  .search_div {
+    @extend .common-margin15;
+  }
+
+  .tab-header {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .sort {
+    display: inline-block;
+  }
+  .tab-row {
+    padding: 10px 0;
+    border-bottom: solid 1px #ccc;
+    text-align: center;
+  }
+  .tab-td {
+    vertical-align: top;
+  }
+
+  .custom-antd-table {
+    th {
+      text-align: center;
+    }
+  }
+  .pagination-style {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .history-two{
+    margin-left: 10px;
+  }
+  .back-btn{
+    margin-top: 10px;
+    border:none;
+    margin-left: 50px;
+    margin-right: 5px;
+  }
+  .history-near{
+    display:inline-block;
+    margin: 0 10px;
+    font-size: small;
+
+    .history-bank-enter{
+      font-size: smaller;
+    }
+    border: solid 1px #e1e4e6;
+    padding: 1px 4px;
+  }
+  .click-history{
+    color:deepskyblue;
+    display:inline-block;
+    margin: 0 10px;
+    font-size: small;
+    .history-bank-enter{
+      font-size: smaller;
+    }
+    border: solid 1px deepskyblue;
+    padding: 1px 4px;
+  }
+  .inputNumber{
+    width: 95px;
+  }
+  .history-near:hover{cursor:pointer}
+}
+.RowDetail{
+  font-size: 12px;
+  div{
+    margin-top: 5px;
+  }
+  .title{
+    font-size: 14px;
+  }
+  .content{
+    margin-left: 10px;
+  }
+}

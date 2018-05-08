@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="hello">
+    <meta name="keywords" content="a,b,c">
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>设备回收</title>
+    <script type="text/javascript" src="content/js/cord.js"></script>
+    <link rel="stylesheet" type="text/css" href="content/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/fycx.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/sbfh.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/sbhs.css" />
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div class="content">
+		<div class="listed-group">
+			<ul>
+				<li class="no-border-bottom">
+					<a href="javascript: ">
+						<span class="pull-left">租赁单号：</span>
+						<div class="num-group pull-left">
+							<button class="pull-left">-</button>
+							<input class="pull-left" type="text" value="1" />
+							<button class="pull-left">+</button>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</a>
+				</li>
+
+				<li>
+					<a href="javascript: ">
+						<span class="pull-left">损坏台数：</span>
+						<div class="num-group pull-left">
+							<button class="pull-left">-</button>
+							<input class="pull-left" type="text" value="1" />
+							<button class="pull-left">+</button>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="listed-group">
+			<ul>
+				<li>
+					<a href="javascript: ">
+						<span class="pull-left">租赁单号：</span>
+						<em class="pull-right">Z17092818110548</em>
+						<div class="clear"></div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript: ">
+						<span class="pull-left">下单时间：</span>
+						<em class="pull-right">2017/9/25 10/25:58</em>
+						<div class="clear"></div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript: ">
+						<span class="pull-left">用户名称：</span>
+						<em class="pull-right"><img src="content/images/img01.png" alt="" /> 杨恒</em>
+						<div class="clear"></div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript: ">
+						<span class="pull-left">租赁台数：</span>
+						<em class="pull-right active">1台</em></em>
+						<div class="clear"></div>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="listed-group">
+			<ul>
+				<li>
+					<a href="javascript: ">
+						<span class="pull-left">押金金额：</span>
+						<em class="pull-right active">￥10元</em></em>
+						<div class="clear"></div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript: ">
+						<span class="pull-left">租金金额：</span>
+						<em class="pull-right active">￥10元</em></em>
+						<div class="clear"></div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript: ">
+						<span class="pull-left">扣除押金金额：</span>
+						<em class="pull-right active">￥10元</em></em>
+						<div class="clear"></div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript: ">
+						<span class="pull-left">扣除损坏押金金额：</span>
+						<em class="pull-right active">￥10元</em></em>
+						<div class="clear"></div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript: ">
+						<span class="pull-left">扣除损坏押金金额：</span>
+						<em class="pull-right active">￥10元</em></em>
+						<div class="clear"></div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="fixed-btm">
+		<div class="btn-group">
+			<div class="loading">
+				<img src="content/images/loading.gif" alt="" />
+			</div>
+			<a href="javascript: ">确定回收</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="content/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="content/js/public.js"></script>
+</body>
+</html>

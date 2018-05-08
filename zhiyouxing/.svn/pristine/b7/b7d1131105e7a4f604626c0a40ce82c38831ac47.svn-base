@@ -1,0 +1,23 @@
+.content {
+	padding: 0;
+	background-color: #f7f7f7;
+}
+.content ul {
+	margin-bottom: .4rem;
+	padding: 0 .2rem;
+	background-color: white;
+}
+.title {
+	height: 1rem;
+	line-height: 1rem;
+	padding: 0 .2rem;
+	font-size: .3rem;
+	color: white;
+	background-color: #333333;
+}
+.details-listed li .list-group.no-border-right {
+	border-right: none;
+}
+.details-listed li .list-group a {
+	color: #2a72c5;
+}

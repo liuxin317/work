@@ -1,0 +1,305 @@
+store 提供三个方法
+
+subscribe // 监听store变化会自动更新view层，接口一个函数, 
+dispatch // 发送action, action是一个对象type是action名称，也可以自带一些值, 发送action会自动调用reducers
+getState // 获取当前上面挂载的store
+
+
+createStore 是创建store方法，第一个参数接受的是reducer函数,第二个参数，表示state的最初状态。这通常是服务器给出的。
+
+let store = createStore(todoApp, window.STATE_FROM_SERVER)
+
+上面代码中，window.STATE_FROM_SERVER就是整个应用的状态初始值。注意，如果提供了这个参数，它会覆盖 Reducer 函数的默认初始值。
+
+下面是createStore方法的一个简单实现，可以了解一下 Store 是怎么生成的。
+
+const createStore = (reducer) => {
+  let state;
+  let listeners = [];
+
+  const getState = () => state;
+
+  const dispatch = (action) => {
+    state = reducer(state, action);
+    listeners.forEach(listener => listener());
+  };
+
+  const subscribe = (listener) => {
+    listeners.push(listener);
+    return () => {
+      listeners = listeners.filter(l => l !== listener);
+    }
+  };
+
+  dispatch({});
+
+  return { getState, dispatch, subscribe };
+};
+
+
+Reducer的拆分
+
+Reducer函数负责生成state。由于整个应用只有一个state对象，包含所有数据，必然十分庞大，导致Reducer函数也十分庞大。
+
+const chatReducer = (state = defaultState, action = {}) => {
+  const { type, payload } = action;
+  switch (type) {
+    case ADD_CHAT:
+      return Object.assign({}, state, {
+        chatLog: state.chatLog.concat(payload)
+      });
+    case CHANGE_STATUS:
+      return Object.assign({}, state, {
+        statusMessage: payload
+      });
+    case CHANGE_USERNAME:
+      return Object.assign({}, state, {
+        userName: payload
+      });
+    default: return state;
+  }
+};
+
+上面的代码中，三种Action分别改变State的三个属性。
+
+ADD_CHAT：chatLog属性
+CHANGE_STATUS：statusMessage属性
+CHANGE_USERNAME：userName属性
+
+Redux 提供了一个combineReducers方法，用于Reducer的拆分。你只要定义各个子Reducer函数，然后用这个方法，将它们合成一个大的Reducer。
+
+import { combineReducers } from 'redux';
+
+const chatReducer = combineReducers({
+  chatLog,
+  statusMessage,
+  userName
+})
+
+export default todoApp
+
+上面的代码通过combineReducers方法将三个子Redycer合并成一个大的函数。
+
+这种写法有一个前提，就是state的属性名必须与子Reducer同名，如果不同名，就要采用下面的写法。
+
+const reducer = combineReducers({
+  a: doSomethingWithA,
+  b: processB,
+  c: c
+})
+
+// 等同于
+function reducer(state = {}, action) {
+  return {
+    a: doSomethingWithA(state.a, action),
+    b: processB(state.b, action),
+    c: c(state.c, action)
+  }
+}
+
+总之，combineReducers()做的就是产生一个整体的Reducer函数，改函数根据State的Key去执行相应的子Reducer， 并将返回结果合并成一个大的State对象。
+
+
+工作流程：
+
+本节对Redux的工作流程，做一个梳理
+
+首先，用户发出Action
+
+store.dispath(action);
+
+然后，Store自动调用Reducer，并且传入两个参数：当前State和收到Action。Reducer会返回新的State。
+
+let nextState = todoApp(previoysState, action);
+
+State一旦有变化，Store就会调用监听函数。
+
+// 设置监听函数
+store.subscribe(listener);
+
+listener 可以通过store.getState()得到当前状态。如果使用React，这时可以出发重新渲染View。
+
+function listerner () {
+	let newState = store.getState();
+	component.setState(newState);
+}
+
+
+中间件与异步操作
+
+中间件（middleware）
+
+为了理解中间件，让我们站在框架作者的思考问题，如果要添加功能，你会在那个环节添加？
+
+/1 Reducer：纯函数，只承担计算State的功能，不适合承担其他功能，也承担不了，因为理论上，纯函数不能进行读写操作。
+
+/2 View：与State --对应，可以看做State的视觉层，也不合适承担其他功能。
+
+/3 Action: 存放数据的对象，即消息的载体，只能被别人操作，自己不能进行任何操作。
+
+
+想来想去，只有发送Action的这个步骤，即store.dispatch()方法，可以添加功能。举例来说，要添加日志功能，把Action和State打印出来，可以对store.dispatch进行如下改造。
+
+let next = store.dispatch;
+
+store.dispatch = function dispatchAndLog (action) {
+	console.log('dispatching', action);
+	next(action)
+	console.log('next state', store.getState());
+} 
+
+上面代码中，对store.dispatch进行了重定义，在发送Action前后添加了打印功能，这就是中间件的雏形。
+
+中间件就是一个函数，对store.dispatch方法进行了改造，在发出Action和执行Reducer这两步之间，添加了其他功能。
+
+二、中间件的用法
+
+本教程不涉及如何编写中间件，因为常用的中间件都有现成的，只要引用别人写好的模块即可。比如，上一节的日志中间件，就有现成的redux-logger模块。这里只介绍怎么使用中间件。
+
+import { applyMiddleware, createStore } from 'redux';
+import createLogger from 'redux-logger';
+
+const logger = createLogger();
+
+const store = createStore(
+	reducer,
+	applyMiddleware(logger)
+)
+
+上面代码中，redux-logger提供一个生成器createLogger，可以生成日志中间件logger。然后，将它放在applyMiddleware方法之中，传入createStore方法，就完成了store.dispatch() 的功能增强。
+
+这里有两点需要注意：
+
+/1 createStore方法可以接受整个应用的初始状态作为参数，那样的话，applyMiddleware就是第三个参数了。
+
+const store = createStore(
+	reducer,
+	inital_state,
+	applyMiddleware(logger)
+)
+
+
+/2 中间件的次序有讲究
+
+const store = createStore(
+	reducer,
+	applyMiddleware(thunk, promise, logger)
+)
+
+上面代码中，applyMiddleware方法的三个参数，就是三个中间件。有的中间件有次序要求，使用前要查一下文档。比如，logger就一定要放在最后，否则输出结果会不正确。
+
+
+三、applyMiddlewares()
+
+看到这里，你可能会问，applyMiddlewares这个方法到底是干什么的？
+
+它是redux的原生方法，作用是将所有中间件组成一个数组
+
+export default function applyMiddleware(...middlewares) {
+  return (createStore) => (reducer, preloadedState, enhancer) => {
+    var store = createStore(reducer, preloadedState, enhancer);
+    var dispatch = store.dispatch;
+    var chain = [];
+
+    var middlewareAPI = {
+      getState: store.getState,
+      dispatch: (action) => dispatch(action)
+    };
+    chain = middlewares.map(middleware => middleware(middlewareAPI));
+    dispatch = compose(...chain)(store.dispatch);
+
+    return {...store, dispatch}
+  }
+}
+
+上面代码中，所有中间件被放进了一个数组chain，然后嵌套执行，最后执行store.dispatch。可以看到，中间件内部（middlewareAPI）可以拿到getState和dispatch这两个方法。
+
+
+四、异步操作的基本思路
+
+理解了中间件以后，就可以处理异步操作了。
+
+同步操作只要发出一种Action即可，异步操作的差别是它要发出三种Action。
+
+操作发起时的Action
+
+操作成功时的Action
+
+操作失败时的Action
+
+以向服务器取出数据为例，三种Action可以有两种不同的写法。
+
+// 写法一：名称相同，参数不同
+{ type: 'FETCH_POSTS' }
+{ type: 'FETCH_POSTS', status: 'error', error: 'Oops' }
+{ type: 'FETCH_POSTS', status: 'success', response: { ... } }
+
+// 写法二：名称不同
+{ type: 'FETCH_POSTS_REQUEST' }
+{ type: 'FETCH_POSTS_FAILURE', error: 'Oops' }
+{ type: 'FETCH_POSTS_SUCCESS', response: { ... } }
+
+除了Action种类不同，异步操作的State也要进行改造，反映不同的操作状态。下面是State的一个例子。
+
+let state = {
+	// ...
+	isFetching: true,
+	didInvalidate: true,
+	lastUpdated: 'xxxxxx'
+}
+
+上面代码中，State的属性isFetching表示是否在抓取数据。didInvaldate表示数据是否过时，lateUpdated表示上一次更新时间。
+
+现在，整个异步操作的思路就很清楚了。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

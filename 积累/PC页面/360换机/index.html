@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-cn">
+ <head>
+  <meta charset="UTF-8">
+  <title>360换机页面效果</title>
+ </head>
+
+	 <style type="text/css">
+		*{margin:0;padding:0; font-family:"微软雅黑"; list-style:none; text-decoration:none;}
+		html,body{height:100%;}
+		#bg{ width:100%; height:100%;}
+		#bg div{ width:100%; height:100%; background-attachment:fixed; z-index:-2; position:relative;}
+		.bg1{ background:url(img/1.jpg) no-repeat;background-position:center center;}
+		.bg2{ background:url(img/2.jpg) no-repeat;background-position:center center;}
+		.bg3{ background:url(img/3.jpg) no-repeat;background-position:center center;}
+		.bg4{ background:url(img/4.jpg) no-repeat;background-position:center center;}
+		#top{ height:47px; position:fixed;top:30px; width:100%;}
+		.logo{ float:left;margin-left:60px; width:226px;}
+		.nav {float:right;margin-right:60px; width:378px; position:relative; height:auto;}
+		.nav ul li{ float:left; margin-left:56px; font-size:14px; line-height:47px;font-family:"微软雅黑";}
+		.nav ul li a{color:#fff;}
+		.sq{width:60px; height:30px; border:1px solid #fff; border-radius:15px; position:absolute;left:39px; top:7px; z-index:-1;}
+		#xl{position:fixed; top:30%; left:60px; height:264px;background:url(img/nav.png) no-repeat;}
+		#xl ul{margin-top:7px;}
+		#xl ul li{color:#fff; fint-size:12px; padding-left:60px; margin-bottom:55px; cursor:pointer;}
+		#xl ul .on{background:url(img/nav_cho.png) no-repeat;}
+	 </style>
+
+ <body>
+	<!--头部-->
+		<div id="top">
+			<div class="logo">
+				<img src="img/logo.png"/>
+			</div>
+			<div class="nav">
+				<ul>
+					<li><a href="">首页</a></li>
+					<li><a href="">栏目页</a></li>
+					<li><a href="">内容</a></li>
+					<li><a href="">安全页面</a></li>
+				</ul>
+				<div class="sq"></div>
+			</div>
+		</div>
+
+	<!--下拉按钮-->
+		<div id="xl">
+			<ul class="in">
+				<li class="on">安妮1</li>
+				<li>安妮2</li>
+				<li>安妮3</li>
+				<li>安妮4</li>
+			</ul>
+		</div>
+
+	<!--背景-->
+		<div id="bg">
+			<div class="bg1"></div>
+			<div class="bg2"></div>
+			<div class="bg3"></div>
+			<div class="bg4"></div>
+		</div>
+
+
+
+               
+  
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+  <script type="text/javascript">
+		$(function(){
+			$(window).resize(function(){
+				$(document).scrollTop(index*$(window).height());
+				//alert($(window).height())
+			})//调整窗口，内容区不变；
+			$("div .nav ul li").mouseenter(function(){
+				var Wid=$(this).width();
+				var Left=$(this).position().left;
+				$(".sq").stop(true).animate({
+					left: Left + 39 +'px',
+					width: Wid + 32 +'px'
+				},300)
+			})
+
+			$("div .nav").mouseleave(function(){
+				$(".sq").stop(true).animate({
+					left:39 +'px',
+					width:60 +'px'
+				},300)
+			})
+				var index=0;
+				var Time=new Date();
+			$("div .in li").click(function(){
+				var WH=$(window).height();
+				var index=$(this).index();
+				$(this).addClass('on').siblings().removeClass('on');
+				$("html,body").animate({
+					scrollTop:index*WH +'px'
+				},500)
+			})
+			$(document).scrollTop(0);//刷新页面回到最开始的一屛；
+		$(document).mousewheel(function(){//鼠标滚轮，滚动走一屛；
+			if(new Date() - Time > 300){//判断每一屛的滚动时间；从而调节滚轮的交互式；
+			var dt= arguments[1];//判断第几屛；
+			//alert(dt);
+			Time= new Date();
+			if( dt<0 ){
+				index ++;
+				if(index>3)index=0;
+			}
+			else{
+				index --;
+				if(index<0)index=3;
+			}
+			var WH=$(window).height();
+			$("div .in li").eq(index).addClass('on').siblings().removeClass('on');
+			$("html,body").animate({
+				scrollTop:index*WH +'px'
+			},500)
+			}
+			})
+		})
+		/*function f(a,b,c){
+			alert(arguments.length);
+			a = 100;
+			alert(arguments[0]);       // result: "100"
+			arguments[0] = "qqyumidi";
+			alert(a);                  // result: "qqyumidi"
+			alert(c);                  // result: "undefined"
+			c = 2012;
+			alert(arguments[2]);       // result: "undefined"
+			return false;
+		}
+		f(1,2);*/
+		
+		/*setInterval(function(){
+			var z = new Date().getDay();//当前周几；
+			var h = new Date().getHours();//当前时针；
+			var m = new Date().getMinutes();//获取分针;
+			var s = new Date().getSeconds();//获取秒针；
+			alert("周"+z+": 时间："+h+":"+m+": "+s);
+		},1000)*/
+
+		
+  </script>
+ </body>
+</html>

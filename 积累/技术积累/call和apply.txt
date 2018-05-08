@@ -1,0 +1,11 @@
+Function1.call(Function2,a,b,c...n);
+
+Function1替换Function2的this指向。
+
+
+Function1.apply(Function2,[a,b,c,d...n]);
+
+Function1替换Function2的this指向。
+
+
+二者之间的区别是给函数传参的形式call是一个一个传，apply是传入数组。

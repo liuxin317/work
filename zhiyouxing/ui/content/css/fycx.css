@@ -1,0 +1,49 @@
+/*body {
+	padding-bottom: 1.6rem;
+}*/
+/*.content {
+	margin-bottom: 1.6rem;
+}*/
+.paging {
+	width: 95%;
+	height: .85rem;
+	margin: 0 auto;
+}
+
+.btn-style {
+	width: 45%;
+	height: .85rem;
+	line-height: .85rem;
+}
+
+.listed-group {
+	margin-bottom: .2rem;
+	padding: 0 .2rem;
+	background-color: white;
+}
+
+.listed-group ul li {
+	height: .95rem;
+	padding: 0 .1rem;
+	line-height: .95rem;
+	font-size: .3rem;
+	color: #606060;
+	border-bottom: #d9d9d9 solid 1px;
+}
+
+.list-more ul li {
+	padding: 0 .5rem 0 .1rem;
+	background: url(../images/more_right_icon.png) no-repeat 99% center / .25rem .4rem;
+}
+
+.listed-group ul li a {
+	color: #606060;
+}
+
+.listed-group ul li em.active {
+	color: #ff9414;
+}
+
+.listed-group ul li:last-of-type {
+	border-bottom: none;
+}

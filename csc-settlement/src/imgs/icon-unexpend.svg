@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #666a80;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="组权限icon" class="cls-1" d="M158,206V190h8v2h8v14H158Zm15-13h-8v-2h-6v4h14v-2Zm0,3H159v9h14v-9Zm-7,2h1v2h2v1h-2v2h-1v-2h-2v-1h2v-2Z" transform="translate(-158 -190)"/>
+</svg>

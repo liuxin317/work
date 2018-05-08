@@ -1,0 +1,71 @@
+.column-box {
+	padding: 15px 32px 45px;
+}
+.search-group input {
+	width: 205px;
+	height: 30px;
+	padding-left: 10px;
+	border-radius: 5px 0 0 5px;
+	border: #ced3d6 solid 1px;
+	border-right: none;
+}
+.search-group a {
+	width: 85px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 0 5px 5px 0;
+	border: #ced3d6 solid 1px;
+	border-left: none;
+	font-size: 12px;
+	color: white;
+	background-color: #004b98;
+}
+.listed-row {
+	padding: 15px 0 10px;
+	border-bottom: #dde4e7 dashed 1px;
+}
+.listed-row .list-img {
+	width: 120px;
+	height: 88px;
+	border: #dde4e7 solid 1px;
+}
+.listed-row .list-content {
+	width: 760px;
+}
+.listed-row .list-content h6 a {
+	font-size: 14px;
+	color: #004b98;
+}
+.listed-row .list-content h6 a:hover {
+	text-decoration: underline;
+}
+.listed-row .list-content p {
+	margin-top: 8px;
+	font-size: 12px;
+	color: #666;
+	line-height: 20px;
+}
+.listed-row .list-content time {
+	display: block;
+	margin-top: 5px;
+	font-size: 12px;
+	color: #999;
+}
+.page-group {
+	margin-top: 30px;
+	line-height: 30px;
+}
+.page-group .page-total,
+.page-group .page-caozuo a {
+	font-size: 14px;
+	color: #999;
+}
+.page-group .page-total em,
+.page-group .page-caozuo a.active,
+.page-group .page-caozuo a:hover {
+	color: #004b98;
+}
+.page-group .page-caozuo a{
+	margin: 0 5px;
+}

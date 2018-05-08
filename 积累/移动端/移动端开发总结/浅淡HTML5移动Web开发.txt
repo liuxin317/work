@@ -1,0 +1,546 @@
+ - width 视口宽度
+
+ - height 视口高度
+
+ - device-width 设备屏幕的宽度
+
+ - device-height 设别屏幕的高度
+
+ - orientation 检测屏幕处于横屏还是竖屏
+
+ - aspect-ratio 基于视口的宽高比例
+
+ - device-aspect-ratio 基于设备屏幕的宽高
+
+@media screen and(orientation:portrait){
+	//当设备纵向放置的时候才匹配，
+}
+
+<link rel="stylesheet" media="screen and(orientation:portrait)" href="style.css" />//当设备纵向放置的时候才匹配，
+
+<link rel="stylesheet" media="screen and(orientation:portrait) and(min-width:960px)" href="style.css"  />
+
+当设备宽度大于960px才会加载style.css.
+
+-------------------------------------------------------------------
+
+
+<meta name="viewport" content="width=device-width,inital-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,target-densitydpi=high-dpi]" />
+
+name="viewport" content中width=device-width表示浏览器页面宽度等于设备宽度，intial-sclae=1表示页面不缩放保持，minimum-scale=1和maximum-sclae=1表示允许用户最小缩小至原大小和扩大到原大小，user-scaleable=no表示禁止缩放，target-densitydpi = high-dpi表示适配高分辨率的屏幕
+
+-------------------------------------------------------------------
+
+
+@media screen and(max-width:768){
+	//针对视口宽度不大于768像素的情况加载样式。
+}
+
+-webkit-text-size-adjust:none  禁止自动调整字体大小，
+
+input:text - 文本
+
+input:color - 颜色选择器
+
+input:number - 数字文本
+
+input:date - 日历插件
+
+input:range - 供选择范围
+
+-------------------------------------------------------------------
+
+
+建议：
+
+1、如何禁止用户旋转设备
+
+浏览器本身在是办不到的 ，因为禁止开发者阻止浏览器的orientationchange事件。
+
+2、禁止自动识别电话号码
+
+3、盒子边框溢出
+
+-webkit-box-sizing:border-box 用老指定该盒子的大小包括边框的宽度。
+
+4、ios数字颜色样式超过9位后失控
+
+5、ios可禁止用户在新窗口打开页面
+
+可以使用a标签的target=“_self”指定在当前页面打开，但是ios长按链接一段时间后，系统会弹出一个对话框，用户可以通过点击在新页面中打开在新窗口打开页面，这样我们指定的target属性就失效了，但是可以通过指定当前元素的 -webkit-touch-callout属性为none来禁止ios弹出这些按钮。
+
+6、css3绘图和css3动画
+
+动画代码提取出来单独命名。
+
+
+---------------------------------------------------------------
+
+background-size: contain; - 背景图大小自适应
+
+
+body{ //上下拉动滚动条时卡顿、慢;
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+}
+
+---------------------------------------------------------------
+
+禁止复制、选中文本
+
+Element{
+	user-select:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-khtml-user-select:none;
+}
+
+---------------------------------------------------------------
+
+长时间按住页面出现闪退
+
+element{
+	-webkit-touch-callout: none;
+}
+
+---------------------------------------------------------------
+
+输入框默认内阴影
+
+element{
+	-webkit-appearance: none;
+}
+
+apple-mobile-web-app-capable —— 全屏模式
+
+apple-mobile-web-app-capable是设置WEB应用是否以全屏模式运行。
+
+语法：
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+---------------------------------------------------------------
+
+format-detection —— 识别页面中的电话号码
+
+format-detection 启动或禁止自动识别页面中的电话号码
+
+语法：
+
+<meta name="format-detection" content="telephone=no">
+
+---------------------------------------------------------------
+
+触摸元素时出现半透明灰色遮罩
+
+elemeent{
+	-webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+
+---------------------------------------------------------------
+
+active兼容处理，即伪类：active失效
+
+方法一：
+
+body添加ontouchstart
+
+<body ontouchstart="">
+
+
+方法二：
+
+js给document绑定touchstart或touchend事件
+
+<script>
+document.addEventListener("touchstart",function(){},false);
+</script>
+
+---------------------------------------------------------------
+
+动画定义3D启动硬件加速
+
+element{
+	-webkit-tansform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+---------------------------------------------------------------
+
+旋转屏幕时，字体大小调整的问题
+
+html,body,form,fieldset,p,div,h1,h2,h3,h4,h5,h6{
+	-webkit-text-size-adjust: 100%;
+}
+
+---------------------------------------------------------------
+
+transition 闪屏
+
+/*设置内嵌的元素在3D空间如何呈现：保留3D*/
+
+-webkit-transform-style: preserve-3d;
+
+/*设置进行转换的元素的背面在面对用户时是否可见：隐藏*/
+
+-webkit-backface-visibility: hidden;
+
+---------------------------------------------------------------
+
+圆角bug
+
+某些手机圆角失效
+
+background-clip: padding-box;
+
+---------------------------------------------------------------
+
+顶部状态栏背景色
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+说明先使用apple-mobile-app-capable指定全屏模式，否则这个meta标签不起任何作用;
+
+content设置为default，状态正常显示。如果设置为black，则状态栏有黑色背景，如果设置为black-translucent，则状态栏显示为黑色半透明。
+
+默认值是：default;
+
+---------------------------------------------------------------
+
+设置缓存
+
+<meta http-equiv="Cache-Control" content="no-cache" />
+
+手机页面通常在第一次加载后会进行缓存，然后每次刷新会使用缓存而不是去重新想服务器发送请求。如果不希望使用缓存可以设置no-cache。
+
+---------------------------------------------------------------
+
+桌面图标
+
+<link rel="apple-touch-icon" href="..png" />
+
+<link rel="apple-touch-icon" sizes="76*76" href="..png" />
+
+<link rel="apple-touch-icon" sizes="120*120" href="..png" />
+
+<link rel="apple-touch-icon" sizes="152*152" href="..png" />
+
+
+上面的写法可能大家会觉得会有默认的光泽，下面设置方法可以去掉光泽效果：
+
+<link rel="apple-touch-icon-precomposed" href="..png" />
+
+---------------------------------------------------------------
+
+启动画面
+
+<link rel="apple-touch-startup-image" href="..png" />
+
+ios下页面启动加载时显示的画面图片，避免加载时的白屏。
+
+可以通过media来指定不同的大小：
+
+<!--iPhone-->
+
+<link href="..320*460.png" media="(device-width: 320px)" href="apple-touch-startup-image" />
+
+<!--iPhone Retina-->
+
+<link href="..640*920.png" media="(device-width:320px)and(-webkit-device-pixel-ratio:2)" rel="apple-touch-startup-image" />
+
+<!--iPhone 5-->
+
+<link rel="apple-touch-startup-image" media="(device-width: 768px)and(orientation: portrait)" href="..768*1096.png" />
+
+<!--iPad  landscape-->
+
+<link href="apple-touch-startup-image-748*1024.png" meida="(device-width: 768px) and(orientation: landscape)" rel="apple-touch-startup-image" />
+
+<!--iPad Retina portrait-->
+
+<link href="..1536*2008.png" media="(device-width: 1536px) and (orientation: portrait) and(-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+
+---------------------------------------------------------------
+
+浏览器私有及其他meta
+
+一下属性在项目中没有应用过。可以写一个dome测试一下！
+
+<!--QQ浏览器私有-->
+
+<!--全屏模式-->
+
+<meta name="x5-fullscreen" content="true" />
+
+<!--强制竖屏-->
+
+<meta name="x5-orientation" content="portrait" />
+
+<!--强制横屏-->
+
+<meta name="x5-orientation" content="landscape" />
+
+<!--应用模式-->
+
+<meta name="x5-page-mode" content="app" />
+
+
+<!--UC 浏览器私有-->
+
+<!--全屏模式-->
+
+<meta name="full-screen" content="yes" />
+
+<!--强制竖屏-->
+
+<meta name="screen-orientation" content="portrait" />
+
+<!--强制横屏-->
+
+<meta name="screen-orientation" content="landscape" />
+
+<!--应用模式-->
+
+<meta name="browsermode" content="application" />
+
+其他，针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓
+
+<meta name="HandheldFriendly" content="true" />
+
+微软的老式浏览器
+
+<meta name="MobileOptimized" content="320" />
+
+windows phone 点击无高光
+
+<meta name="msapplication-tap-highlight" content="no" />
+
+---------------------------------------------------------------
+
+IOS 中input键盘事件 keyup、keydown、keypress支持不是不好
+
+问题是这样的，用input:search做模糊搜索的时候，在键盘里面输入关键词，会通过ajax后台查询，然后返回数据，然后再对返回的数据进行关键词标红。
+
+用input监听键盘keyup事件，在安卓手机浏览器中是可以的，但是在ios手机浏览器中变红很慢，用输入法输入之后，并未立刻相应keyup事件，只有在你通过删除之后才能相应！
+
+解决办法：
+
+可以用html5的oninput事件去代替keyup
+
+<input type="text" id="testInput" />
+
+<script type="text/javascript">
+	document.getElementById("testInput").addEventListener("input",function(e){
+	var value = e.target.value;
+})
+</script>
+
+---------------------------------------------------------------
+
+h5网站input 设置为type=number的问题
+
+h5网页input的type设置为number一般会产生三个问题：
+
+1、maxlength属性不好用了；
+
+2、form表单提交的时候，默认给取整了
+
+3、部分安卓手机出现样式问题
+
+
+问题一解决，如下：
+
+<input type="number" oninput="checkTextLength(this,10)" />
+
+function checkTextLength(obj,length){
+	if(obj.value.length>length){
+		obj.value = obj.value.substr(0,length);
+	}
+}
+
+
+问题二，是因为form提交默认做了表单验证，step默认是1，要设置step属性，假如保留2位小数，写法如下：
+
+<input type="number" step="0.01" />
+
+关于step，简单的介绍，input中type=number，一般会自动生成一个上下箭头，点击上箭头默认增加一个step，点击下箭头默认会减少一个step。
+
+假如step和min一起使用，那么数值必须在min和max之间。
+
+<input type="number" step="3.1" min="1" />
+
+最小值是1，那么可以输入1.0，第二个是可以输入就是4.1.
+
+
+问题三，去除input默认样式
+
+input[type=number]{
+	-moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+---------------------------------------------------------------
+
+ios设置input按钮样式会被默认样式覆盖
+
+解决方式如下：
+
+input,
+textarea {
+	border: 0;
+	-webkit-appearance: none;
+}
+
+---------------------------------------------------------------
+
+ios键盘字母输入，默认首字母大写
+
+解决方案，如下：
+
+<input type="text" autocapitalize="off" />
+
+---------------------------------------------------------------
+
+select 下拉选择设置右对齐
+
+select option{
+	direction: rtl;
+}
+
+---------------------------------------------------------------
+
+通过transform进行skew变形，rotate旋转会造成出现锯齿现象
+
+-webkit-transform: rotate(-4deg) skew(10deg) translateZ(0);
+
+transform: rotate(-4deg) skew(10deg) translateZ(0);
+
+outline: 1px solid rgba(255,255,255,0);
+
+---------------------------------------------------------------
+
+移动端点击300ms延迟
+
+300s尚可接受，不过因为300ms产生的问题，我们必须要解决。300ms导致用户体验并不是很好，解决此问题，一般在移动端用tap事件来取代click事件。
+
+---------------------------------------------------------------
+
+移动端点透问题
+
+<div id="haorooms">点头事件测试</div>
+
+<a href="#">www.xxx.com</a>
+
+div是绝对定位的蒙层，并且z-index高于a。而a标签是页面中的一个链接，我们给div绑定tap事件：
+
+$("#haorooms").on("tap",function(){
+	$("#haorooms").hide();
+})
+
+touchstart 早于touchend 早于 click.click的触发是有延迟的，这个时间大概在300ms左右，我们tap触发之后蒙层隐藏。此时click还没有触发，300ms之后由于蒙层隐藏，我们的click触发到了下面的a链接上。
+
+解决：
+
+1、尽量都使用touch事件来替换click事件。
+
+2、用fastclick，
+
+3、用preventDefault阻止a标签的click
+
+4、延迟一定的事件来处理事件
+
+5、以上一般都能解决，实在不行就换成click事件。
+
+---------------------------------------------------------------
+
+介绍touchend事件，如下：
+
+$("#haorooms").on("touchend",function(event){
+	event.preventDefault();
+})
+
+---------------------------------------------------------------
+
+消除IE10 里面的那个叉号
+
+input:-ms-clear{display: none;}
+
+---------------------------------------------------------------
+
+中文输入法输入英文时，字母之间可能会出现一个六分之一空格
+
+可以通过正则去掉：
+
+this.value = this.value.replace(/\u2006/g,"");
+
+---------------------------------------------------------------
+
+移动端HTML5 audio autoplay失效问题
+
+这个不是BUG，由于自动播放网页中的音频或视频，会给用户带来一些困扰或者不必要的流量消耗，所以苹果和安卓系统会通常禁止自动播放和使用JS的触发播放，必须由用户来触发才可以播放。
+
+解决方法思路，先通过用户touchstart触碰，触发播放并暂停（音频开始加载，后面JS在操作就没问题了）。
+
+解决代码
+
+document.addEventListener("touchstart",function(){
+	document.getElementsByTagName("audio")[0].play();//播放
+	document.getElementsByTagName("audio")[0].pasue();//暂停
+})
+
+---------------------------------------------------------------
+
+移动端HTML5 input data不支持placeholder问题
+
+解决思路，利用事件改变type属性值：
+
+<input type="text" placeholder="Date" class="textbox" onfocus="(this.type="data")" id="data" />
+
+---------------------------------------------------------------
+
+部分机型存在type为search的input，自带class按钮样式修改方法
+
+为了兼容所有浏览器，我们会自己实现一个，此时去掉原生close按钮的方法为：
+
+#Search::-webkit-search-cancel-button{
+	display: none;
+}
+
+如果想使用原生close按钮，又想使用其符合设计风格，可以对这个伪元素样式进行修改。
+
+---------------------------------------------------------------
+
+唤起select的option展开
+
+zepto方式：
+
+$(sltElement).trrgger("mousedown");
+
+原生JS：
+
+function showDropdown(sltElement){
+	var event;
+	event = document.creatEvent("MouseEvents");
+	event.initMouseEvent("mousedown",true,true,window);
+	sltElement.dispatchEvent(event);
+}
+
+---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

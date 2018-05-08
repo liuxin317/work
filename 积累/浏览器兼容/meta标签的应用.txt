@@ -1,0 +1,130 @@
+meta标签是一个放在head区域的辅助型标签，提供了有关页面的信息，对于进入搜索引擎的索引有帮助，几乎多有的额网页里面都能看到它的存在，列如：<meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+或者：<meta name="Keywords" content="*****">
+
+meta标签的作用
+
+meta标签可以提供有关页面的信息，比如搜索引擎和更新频度的内容提要和关键词，它可以鉴别做做，设定页面格式，还可以设置页面。
+
+meta标签的组成
+
+分别是http-equiv属性和那么属性，http-equiv属性主要是用来给浏览器识别网页内容，如Content-Type和Content-language，它们告诉浏览器网页使用了那种语言和字符集，name属性的作用是描述网页的，对应于content，以便于搜索引擎机器人查找、分类网站。
+
+书写格式为: <meat name="名称" content="网页内容">
+
+
+name属性主要有一下几种参数:
+
+A.Keywords - 关键词（告诉搜索引擎你的网页关键词是什么？）
+
+B、description - 网站内容描述（告诉搜索引擎网站的主要内容）
+
+C、robots - 机器人向导（robots用来告诉搜索机器人那些页面需要索引）content属性参数有all、none、indexfollow。
+
+D、author - 作者（标注网页的作者）
+
+
+http-equiv属性 - http的文件头作用
+
+它可以向浏览器传回一些有用的信息，以帮助正确的显示网页内容
+
+例如：<meta http-equiv="参数" content="参数变量值">
+
+以下几种参数：
+
+A、expires - 期限（可以用于设定网页的到期时间。过期，必须到服务器重新传输）
+
+用法：＜meta http-equiv="expires" content="Fri, 12 Jan 2001 18:18:18 GMT"＞ 
+
+B、pragma - cache模式（禁止浏览器从本地计算机的缓存中访问页面内容）
+
+用法：<meta http-equiv="pragma" content="no-cache">
+
+C、refresh - 刷新（自动刷新并指向新页面）
+
+用法:<meta http-equiv="refreash" content="2; URL=http://www.baidu.com"> 浏览器2s后刷新到新网址；
+
+D、Set-Cookie - cookie设定（如果网页过期，那么存盘的cookie将被删除）
+
+用法:<meta http-equiv="set-cookie" content="cookievalue=xxx;expires=Friday,12-jan-2001 18:18:18 GMT">
+
+E、window-target - 显示窗口的设定（强制页面在当前窗口以独立页面显示）
+
+用法：<meta http-equiv="window-target" content="_top"> 注意：用来防止别人在框架里调用自己的页面；
+
+F、content-Type - 显示字符集的设定（说明：设定页面使用的字符集）
+
+用法：<meta http-equiv="content-Type" content="text/html; charset=gb2312">
+
+
+二、meta标签的功能
+
+1、帮助主页被各大搜索引擎登陆 -- 最重要的就是对keywords和description的设置。
+
+比如：
+
+<meta name="keywords" content="网页,网页制作, 网页特效,建站指南, 教程下载, 动画制作，网页教学，网页素材，视频教程，技术论坛，免费空间，免费域名">
+
+<meta name="description" content="网页教学网 专业的网页教学网站">
+
+2、定义页面的使用语言
+
+这是meta标签最常见的功能，在制作网页时，我们在纯HTML代码下都会看到它的作用是定义你网页的语言，如果你的网页设置的是GB码，而浏览者没有安装GB码，这时网页只会呈现浏览者所设置的浏览器默认语言。
+
+比如:
+
+<meta http-equiv="content-Type" content="text/html; charset=gb2312"> 这段代码就表示将网页的语言设置成国际码。
+
+3、自动刷新并指向新的页面
+
+如果你想是您的网页在无人控制的情况下，能自动在指定的时间内去访问指定的网页，就可以使用meta标签的自动刷新网页的功能。
+
+比如：
+
+<meta http-equiv="refresh" content="2; url=http://www.baidu.com">
+
+4、实现网页转换时的动画效果
+
+使用meta标签，我们还可以在进入网页或者离开网页的一刹那实现动画效果，我们只要在页面的html代码中的head标签之间添加代码就可以了
+
+比如：
+
+<meta http-equiv="page-enter" content="revealTrans(duration=5.0,transition=20)">
+
+<meta http-equiv="page-exit" content="revealTrans(duration=5,transition=20)">
+
+一旦代码被加入一个网页中后，我们再进出页面时就会看到一些特殊效果，这个功能其实与Frontpage2000中的Format page Transition一样，但我们要注意的是所加网页不能是一个frame页；
+
+5、网页顶级评价
+
+用来设置网页的级别
+
+<meta http-equiv=〃PICS－Label〃   content=′(PICS－1.1 〃
+http://www.rsac.org/ratingsv01.html〃  l gen true comment 〃RSACi North America Server〃  for 〃
+http://www.rsac.org〃  on 〃2001.08.16T08:15－0500〃  r (n 0 s 0 v 0 l 0))′>
+
+6、控制页面缓冲
+
+meta标签可以设置网页到期的事件，也就是说，放你在IE浏览器中设置浏览网页时首先查看本地缓冲的页面，那么当前浏览某一网页，而本地缓冲又有时，那么浏览器会自动浏览缓冲区里的页面，知道meta中设置的事件到期，这时候，浏览器才会去取的新页面。
+
+比如:
+
+<meta http-equiv="expires" content="friday,12-jan-2001 18:18:18 GMT">
+
+7、控制网页显示的窗口
+
+我们还可以使用meta标签来质控网页的显示窗口，只要在网页中加入下面的代码就可以了
+
+比如:
+
+<meta http-equiv="window-target" content="_top">
+这样可以防止网页被别人作为一个frame调用；
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,194 @@
+.navs {
+  height: 58px;
+  line-height: 58px;
+  background-color: #23b8f6;
+  color: #fff;
+
+  .menu-wrapper {
+    margin-left: 193px;
+  }
+
+  > .log {
+    margin-left: 30px;
+    margin-right: 20px;
+    font-size: 24px;
+  }
+
+  > button {
+    //display: inline-block;
+    //min-width: 120px;
+    margin: 0 15px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0) !important;
+    border: none;
+    font-size: 16px;
+    //text-align: center;
+    //text-decoration: none;
+    //vertical-align: top;
+
+    &:hover {
+      //color: #dfdfdf;
+      background-color: rgba(255, 255, 255, 0);
+    }
+  }
+  > .xxx {
+    background: url(../../../imgs/test.jpg) center no-repeat;
+    background-size: 100%;
+  }
+
+  .ant-dropdown-menu-item-selected {
+    color: #77f;
+  }
+
+  .ant-btn:hover, .ant-btn:focus {
+    color: #fff;
+    //background-color: #fff;
+    //border-color: #3da8ff;
+  }
+
+  .logo {
+    display: inline-block;
+    background: url(../../../imgs/logo.png) 0 0 no-repeat;
+    background-size: auto 100%;
+    width: 193px;
+    height: 58px;
+    vertical-align: top;
+    float: left;
+  }
+}
+
+//导航菜单样式
+.settle-main-menu {
+  background: transparent;
+  & > .ant-menu-submenu{
+    margin-left: 30px;
+    font-size: larger;
+  }
+
+  & > .ant-menu-submenu > .ant-menu-submenu-title {
+    color: #b7b7b7;
+  }
+  & > .ant-menu-submenu-selected > .ant-menu-submenu-title {
+    color: #fff;
+  }
+  & > .ant-menu-submenu > .ant-menu-submenu-title:hover {
+    color: #fff;
+  }
+
+  .ant-menu-submenu-vertical > .ant-menu-submenu-title:after {
+    display: none;
+  }
+}
+
+
+.classMenu {
+
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.65);
+
+}
+
+/*水平导航菜单*/
+.h-nav {
+  height: 58px;
+  line-height: 0;
+  display: inline-block;
+  vertical-align: top;
+  border-left: solid 1px #1d97cc;
+  border-right: solid 1px #56cdff;
+  position: relative;
+  z-index: 10;
+
+  .h-top-item {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 126px;
+    height: 100%;
+    background-position: center 9px;
+    background-repeat: no-repeat;
+    border-left: solid 1px #56cdff;
+    border-right: solid 1px #1d97cc;
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+
+    &:nth-child(1) {
+      background-image: url(../../../imgs/work-stage.png);
+      &:hover,&.cur {
+        background-color: #fff;
+        background-image: url(../../../imgs/work-stage-hover.png);
+      }
+    }
+    &:nth-child(2) {
+      background-image: url(../../../imgs/basic-config.png);
+      &:hover,&.cur {
+        background-color: #fff;
+        background-image: url(../../../imgs/basic-config-hover.png);
+      }
+    }
+    &:nth-child(3) {
+      background-image: url(../../../imgs/normal-business.png);
+      &:hover,&.cur {
+        background-color: #fff;
+        background-image: url(../../../imgs/normal-business-hover.png);
+      }
+    }
+    &:nth-child(4) {
+      background-image: url(../../../imgs/business-manage.png);
+      &:hover,&.cur {
+        background-color: #fff;
+        background-image: url(../../../imgs/business-manage-hover.png);
+      }
+    }
+
+    > .link {
+      height: 100%;
+      padding-top: 30px;
+      line-height: 20px;
+    }
+
+    &:hover {
+      > .children-wrapper {
+        display: inline-block;
+      }
+
+      > .link {
+        color: #23b8f6;;
+      }
+    }
+    &.cur {
+      > .link {
+        color: #23b8f6;;
+      }
+    }
+  }
+
+  .children-wrapper {
+    display: none;
+    line-height: 32px;
+    min-width: 126px;
+    margin-left: -1px;
+    white-space: nowrap;
+    background-color: #f5f8fa;
+    box-shadow: 0 0 5px rgba(128,128,128,0.35);
+  }
+
+  .children {
+    display: inline-block;
+    width: 126px;
+    color: #2e3133;
+    vertical-align: top;
+    height: 100%;
+    background-color: #fff;
+  }
+
+  .link {
+    &:hover {
+      color: #23b8f6;
+    }
+    &.act {
+      color: #23b8f6;
+    }
+  }
+}

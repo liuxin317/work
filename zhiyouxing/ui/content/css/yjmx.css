@@ -1,0 +1,12 @@
+.content {
+	padding: 0;
+	background-color: #f3f3f3;
+}
+.details-listed {
+	margin-bottom: .3rem;
+	padding: 0 .2rem;
+	background-color: white;
+}
+.details-listed li.no-border-right .list-group:first-of-type {
+	border-right: none;
+}

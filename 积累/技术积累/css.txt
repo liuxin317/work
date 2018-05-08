@@ -1,0 +1,17 @@
+select 文字右对齐
+1、添加 dir 属性，适合中文，但是会导致英文单词或者有空格的地方文字变成从右到左。
+<select dir="rtl">
+    <option>Foo</option>    
+    <option>bar</option>
+    <option>to the right</option>
+</select>
+2、使用 css ，这个方法是比较靠谱的，建议使用
+
+select {
+    direction: rtl;
+}
+select option {
+    direction: ltr;
+}
+
+ box-sizing: initial; --设置容器宽高内边距边框的和;

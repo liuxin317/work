@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta content="email=no" name="format-detection" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta http-equiv="cache-control" content="no-siteapp"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+	<title>rem开发移动端</title>
+</head>
+<script>
+	(function (doc, win) {
+		var docEl = doc.documentElement;
+		resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+		recalc = function () {
+		var clientWidth = docEl.clientWidth;
+		if (!clientWidth) return;
+		if(clientWidth>=640){
+		docEl.style.fontSize = '100px';
+		}else{
+		docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+		}
+		};
+
+
+		if (!doc.addEventListener) return;
+		win.addEventListener(resizeEvt, recalc, false);
+		doc.addEventListener('DOMContentLoaded', recalc, false);
+	})(document, window);
+</script>
+<style type="text/css" media="screen">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		width:6.4rem;
+		margin: 0 auto;
+	}
+	header{
+		height: 2rem;
+		background-color: red;
+		margin-bottom: 10px;
+	}
+	.content1{
+		float: left;
+		width: 49.5%;
+		height: 2rem;
+		margin-right: 1%;
+		background-color: green;
+	}
+	.content2{
+		float: left;
+		width: 49.5%;
+		height: 2rem;
+		background-color: green;
+	}
+	footer{
+		height: 1rem;
+		background-color: black;
+		margin-top: 10px;
+	}
+	@media screen and (min-width:640px) {/*最小640px,大于640px执行以下css样式*/
+		header{
+			background-color: #abcdef;
+		}
+	}
+	@media screen and(max-width: 640px){/*最大640px,小于640px执行以下css样式*/
+		header{
+			background-color: green;
+		}
+	}
+</style>
+<body>
+	<header></header>
+	<section class="content1">
+		<img src="small-wqb.png" style="width:1.35rem;"/>
+	</section>
+	<section class="content2"></section>
+	<div style="clear: both;"></div>
+	<footer></footer>
+</body>
+</html>

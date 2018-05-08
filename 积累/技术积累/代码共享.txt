@@ -1,0 +1,108 @@
+function ajax(){ 
+  var ajaxData = { 
+    type:arguments[0].type || "GET", 
+    url:arguments[0].url || "", 
+    async:arguments[0].async || "true", 
+    data:arguments[0].data || null, 
+    dataType:arguments[0].dataType || "text", 
+    contentType:arguments[0].contentType || "application/x-www-form-urlencoded;charset=utf-8", 
+    beforeSend:arguments[0].beforeSend || function(){}, 
+    success:arguments[0].success || function(){}, 
+    error:arguments[0].error || function(){} 
+  } 
+  ajaxData.beforeSend() 
+  var xhr = createxmlHttpRequest();  
+  xhr.responseType=ajaxData.dataType; 
+  xhr.open(ajaxData.type,ajaxData.url,ajaxData.async);  
+  xhr.setRequestHeader("Content-Type",ajaxData.contentType);  
+  xhr.send(convertData(ajaxData.data));  
+  xhr.onreadystatechange = function() {  
+    if (xhr.readyState == 4) {  
+      if(xhr.status == 200){ 
+        ajaxData.success(xhr.response) 
+      }else{ 
+        ajaxData.error() 
+      }  
+    } 
+  }  
+} 
+  
+function createxmlHttpRequest() {  
+  if(window.XMLHttpRequest){
+    return new XMLHttpRequest();
+  }else if(window.ActiveXObject){
+    try{
+       return new ActiveXObject("Msxml2.XMLHTTP");
+    }catch(e){
+       try{
+          return new ActiveXObject("Microsoft.XMLHTTP");
+       }catch(e){
+          return "";
+       }
+    }
+  }else{
+    return "";
+  } 
+} 
+  
+function convertData(data){ 
+  if( typeof data === 'object' ){ 
+    var convertResult = "" ;  
+    for(var c in data){  
+      convertResult+= c + "=" + data[c] + "&";  
+    }  
+    convertResult=convertResult.substring(0,convertResult.length-1) 
+    return convertResult; 
+  }else{ 
+    return data; 
+  } 
+}
+
+function getCookie(name) {
+  var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+  if(arr=document.cookie.match(reg))
+  return unescape(arr[2]);
+  else
+  return null;
+}
+
+var TOKEN = getCookie("less_t");
+/**
+*method - 请求方式;
+*data - 发送数据;
+*callback - 请求成功的
+**/
+function ajaxStart (method,data,callback,error) {
+    data.token = TOKEN;
+
+    ajax({ 
+      type: method,
+      url: "/ServiceServlet",
+      async: true,
+      dataType:"json", 
+      data: data,
+      beforeSend:function(){ 
+        //some js code 
+      },
+      success:function(msg){ 
+        if (msg !== null && msg !== undefined) {
+          if (msg.rspCode == "000000") {
+              callback(msg)
+          } else {
+              antd.message.warning(msg.rspDesc);
+          }
+        }else {
+          antd.message.error('请求失败');
+          if (error !== undefined) {
+            error()
+          }
+        }
+      }, 
+      error:function(){ 
+        antd.message.error('通信失败');
+        if (error !== undefined) {
+          error()
+        }
+      } 
+    })
+};

@@ -1,0 +1,81 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+	margin: 0;
+	padding: 0;
+}
+ul,li {
+	list-style: none;
+}
+html {
+	height: 100%;
+	font-size: 100px;
+	font-weight: lighter;
+}
+*{
+	box-sizing: border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+body {
+	height: 100%;
+	font-family: Arial,"Microsoft YaHei","\5b8b\4f53";
+	font-size: 14px;
+	background-color: #fff;
+}
+html {
+	>body {
+		font-family: Arial, "Lantinghei SC", "Microsoft YaHei","\5b8b\4f53";
+	}
+}
+#root {
+	min-width: 1024px;
+}
+
+/*通用基本样式*/
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.dib {
+	display: inline-block;
+}
+.hide {
+	display: none!important;
+}
+.block {
+	display: block;
+}
+.none {
+	display: none;
+}
+.clear-float::after {
+	content: " ";
+	display: table;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+	height: 0;
+}
+.mt15 {
+	margin-top: 15px;
+}
+.mt20 {
+	margin-top: 20px;
+}
+.tac {
+	text-align: center;
+}
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/*通用字体颜色*/
+.light-black {
+	color: #5c6366;
+}
+
+// 引入通用页面样式
+@import "./common";

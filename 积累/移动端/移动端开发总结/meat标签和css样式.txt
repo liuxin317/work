@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="email=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<title>Ê×Ò³</title>
+	<link rel="stylesheet" type="text/css" href="content/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="content/css/swiper.min.css" />
+	<script type="text/javascript" src="content/js/compatible.js"></script>
+	<!--[if lt IE9]>
+		<script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+	<![end if]-->
+</head>
+<body>
+	
+</body>
+</html>
+
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 50px;
+    }
+}
+ 
+@media screen and (min-width: 360px) {
+    html {
+        font-size: 56px;
+    }
+}
+ 
+@media screen and (min-width: 400px) {
+    html {
+        font-size: 63px;
+    }
+}
+ 
+@media screen and (min-width: 440px) {
+    html {
+        font-size: 69px;
+    }
+}
+ 
+@media screen and (min-width: 480px) {
+    html {
+        font-size: 75px;
+    }
+}
+
+html {
+    font-size: 15.625vw;
+}
+
+@media screen and (min-width: 640px) {
+    html {
+        font-size: 100px;
+    }
+}
+/*reset*/
+*{ margin: 0; padding: 0; }
+html{ transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -moz-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); }
+html,body,form,fieldset,p,div,h1,h2,h3,h4,h5,h6{ text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+body{ font-family:Helvetica; font-size: 12px; overflow: scroll; -webkit-overflow-scrolling: touch; }
+a,button,input,textarea,select{ background: none; -webkit-tap-highlight-color:rgba(255,0,0,0); outline:none; -webkit-appearance:none;}
+li{ list-style: none; }
+em{ font-style: normal; }
+img{ border: 0; vertical-align: middle;}
+a{ text-decoration: none; }
+textarea{ resize: none; overflow: auto; }
+/*public*/
+.wrapper{ max-width: 6.4rem; margin: 0 auto; }
+.pull-left,.list-inline li{ float: left; }
+.pull-right{ float: right; }
+.boxSiz{ box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; }
+.clear{ clear: both; }

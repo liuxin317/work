@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>前端开发规范文档V1.0</title>
+		<style>
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+			}
+			
+			* {
+				font-family: "微软雅黑";
+				color: rgb(85, 85, 85);
+			}
+			
+			.main {
+				width: 800px;
+				margin: 0 auto;
+			}
+			
+			h1 {
+				text-align: center;
+			}
+			
+			.main p:nth-child(2) {
+				font-size: 13px;
+				text-align: center;
+			}
+			
+			blockquote {
+				padding: 10px 15px;
+				margin-bottom: 20px;
+				background-color: whitesmoke;
+				border-left: 4px solid #999999;
+				word-break: break-word;
+				font-size: 15px;
+				font-weight: normal;
+				line-height: 30px;
+			}
+			
+			blockquote li {
+				line-height: 30px;
+			}
+			
+			blockquote table {
+				width: 100%;
+			}
+			
+			blockquote table td {
+				text-align: center;
+			}
+			
+			blockquote code {
+				padding: 2px 4px;
+				background-color: #fdf6e3;
+				border: none;
+				color: #657b83;
+				font-size: 12px;
+				white-space: pre-wrap;
+			}
+			
+			blockquote pre {
+				word-wrap: normal;
+				word-break: break-all;
+				white-space: normal;
+				overflow: auto;
+				margin-bottom: 20px;
+				display: block;
+				text-align: left;
+				padding: 9.5px;
+				margin: 0 0 10px;
+				font-size: 13px;
+				line-height: 20px;
+				background: #fdf6e3;
+				color: #657b83;
+				border: 1px solid rgba(0, 0, 0, 0.15);
+				border-radius: 4px;
+			}
+			
+			blockquote pre span {
+				text-align: left;
+			}
+			
+			blockquote pre code {
+				padding: 0;
+				background-color: transparent;
+				white-space: pre;
+				color: #268bd2;
+			}
+			
+			blockquote p {
+				text-align: left !important;
+				font-size: 14px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<h1>Web前端开发规范文档</h1>
+			<p>版本：1.0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作者：邓佳俊&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日期：2016-10-08 </p>
+			<h2>目录：</h2>
+			<blockquote>
+				<ul>
+					<li>
+						<a href="#0f">概述</a>
+					</li>
+					<li>
+						<a href="#1f">规范目的</a>
+					</li>
+					<li>
+						<a href="#2f">通用规范</a>
+					</li>
+					<li>
+						<a href="#3f">文件规范</a>
+					</li>
+					<li>
+						<a href="#4f">Html书写规范</a>
+					</li>
+					<li>
+						<a href="#5f">Css书写规范</a>
+					</li>
+					<li>
+						<a href="#6f">JavaScript书写规范</a>
+					</li>
+					<li>
+						<a href="#7f">图片规范</a>
+					</li>
+					<li>
+						<a href="#8f">注释规范</a>
+					</li>
+					<li>
+						<a href="#9f">开发及测试工具</a>
+					</li>
+					<li>
+						<a href="#10f">其他</a>
+					</li>
+					<li>
+						<a href="#11f">版本历史</a>
+					</li>
+				</ul>
+			</blockquote>
+			<h2 id="0f">概述</h2>
+			<blockquote>
+				<ul>
+					<li>为提高团队协作效率, 便于后台人员添加功能及前端后期优化维护, 输出高质量的文档, 特制订此文档. 本规范文档一经确认, 前端开发人员必须按本文档规范进行前台页面开发. 本文档如有不对或者不合适的地方请及时提出, 经讨论决定后可以更改此文档.</li>
+				</ul>
+			</blockquote>
+			<h2 id='1f'>规范目的：</h2>
+			<blockquote>
+				<ul>
+					<li>使开发流程更加规范化，提高团队协作效率。</li>
+				</ul>
+			</blockquote>
+			<h2 id='2f'>通用规范：</h2>
+			<blockquote>
+				<ul>
+					<li><code>CSS</code>样式属性或者<code>JAVASCRIPT</code>“;”方便压缩工具“断句”。</li>
+					<li>文件内容编码均统一为<code>UTF-8</code>。</li>
+					<li><code>CSS</code>、<code>JAVASCRIPT</code>中的非注释类中文字符须转换成<code>unicode</code>编码使用，以避免编码错误时乱码显示。</li>
+				</ul>
+			</blockquote>
+			<h2 id='3f'>文件规范：</h2>
+			<blockquote>
+				<ul>
+					<li>文件名称统一用小写的英文字母、数字和下划线的组合，其中不得包含汉字、空格和特殊字符；命名原则的指导思想一是使得你自己和工作组的每一个成员能够方便的理解每一个文件的意义，二是当我们在文件夹中使用“按名称排例”的命令时，同一种大类的文件能够排列在一起，以便我们查找、修改、替换、计算负载量等等操作。</li>
+					<li>一些浏览器会将含有这些词的作为广告拦截，文件命名、ID、CLASS等所有命名避免下词汇。</li>
+					<li><code>`ad`、`ads`、`adv`、`banner`、`sponsor`、`gg`、`guangg`、`guanggao`等</code></li>
+					<li>html文件统一使用index.htm index.html index.asp文件名（小写） ，各子页命名的原则首先应该以栏目名的英语翻译取单一单词为名称。</li>
+					<li>例如：<code>关于我们 \ aboutus </code><code>信息反馈 \ feedback </code><code>产品 \ product</code></li>
+					<li>如果栏目名称多而复杂并不好以英文单词命名，则统一使用该栏目名称拼音或拼音的首字母表示。</li>
+				</ul>
+			</blockquote>
+			<h2 id='4f'>Html书写规范：</h2>
+			<blockquote>
+				<ul>
+					<li>为每个HTML页面的第一行添加标准模式（standardmode）的声明，确保在每个浏览器中拥有一致的展现。
+						<pre>
+							<code>&lt;!DOCTYPE html&gt;</code>
+						</pre>
+						<p><code>文档类型声明</code>统一为HTML5声明类型，编码统一为UTF-8。</p>
+						<pre>
+							<code>&lt;meta charset="UTF-8"&gt;</code>
+						</pre>
+						<p><code>&lt;HEAD&gt;</code>中添加信息。</p>
+						<pre>
+							<code>&lt;meta name="author" content="xxx"&gt;//作者</code>
+							<code>&lt;meta name="description" content="hello"&gt;//网页描述</code>
+							<code>&lt;meta name="keywords" content="a,b,c"&gt;//关键字,“，”分隔</code>
+							<code>&lt;meta http-equiv="expires" content="Wed, 26 Feb 1997 08：21：57 GMT"&gt;//设定网页的到期时间。一旦网页过期，必须到服务器上重新调阅</code>
+							<code>&lt;meta http-equiv="Pragma" content="no-cache"&gt;///禁止浏览器从本地机的缓存中调阅页面内容</code>
+							<code>&lt;meta http-equiv="Window-target" content="_top"&gt;//用来防止别人在框架里调用你的页面</code>
+							<code>&lt;meta http-equiv="Refresh" content="5;URL=http://xxx.com/"&gt;//跳转页面，5指时间停留5秒 网页搜索机器人向导。用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引</code>
+							<code>&lt;meta name="robots" content="none"&gt;//content的参数有all,none,index,noindex,follow,nofollow，默认是all</code>
+							<code>&lt;link rel="Shortcut Icon" href="favicon.ico"&gt;//收藏图标</code>
+							<code>&lt;meta http-equiv="Cache-Control" content="no-cache, must-revalidate"&gt;//网页不会被缓存</code>
+						</pre>
+						<p><code>IE</code>支持通过特定&lt;meta&gt;标签来确定绘制当前页面所应该采用的<code>IE</code>版本。除非有强烈的特殊需求，否则最好是设置为<code>edgemode</code> ，从而通知<code>IE</code>采用其所支持的最新的模式</p>
+					</li>
+					<li>非特殊情况下<code>CSS</code>样式文件外链至HEAD之间，<code>JAVASCRIPT</code>文件外链至页面底部。
+						<pre>
+							<code>&lt;!DOCTYPE html&gt;</code><br />
+							<code>&lt;html&gt;</code><br />
+							<code>&lt;head&gt;</code><br />
+							&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;link rel="stylesheet" href="css/main.css"&gt;</code><br />
+							<code>&lt;/head&gt;</code><br />
+							<code>&lt;body&gt;</code><br />
+							&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;!-- 逻辑代码 --&gt;</code><br />
+							&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;!-- 逻辑代码底部 --&gt;</code><br />
+							&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;script src="lib/jquery/jquery-2.1.1.min.js"&gt;&lt;/script&gt;</code><br />
+							<code>&lt;/body&gt;</code><br />
+							<code>&lt;/html&gt;</code>
+						</pre>
+						<p>引入<code>JAVASCRIPT</code>库文件，文件名须包含库名称及版本号及是否为压缩版。</p>
+						<pre>
+							<code>jQuery-1.8.3.min.js</code>
+						</pre>
+						<p>引入<code>JAVASCRIPT</code>插件, 文件名格式为库名称+<code>.</code>+插件名称。</p>
+						<pre>
+							<code>jQuery.cookie.js</code>
+						</pre>
+					</li>
+					<li><code>HTML</code>属性应当按照以下给出的顺序依次排列，来确保代码的易读性。
+						<pre>
+							<code>class</code><br />
+							<code>id 、 name</code><br />
+							<code>data-*</code><br />
+							<code>src、for、 type、 href</code><br />
+							<code>title、alt</code><br />
+							<code>aria-*、 role</code>
+						</pre>
+						<p>编码均遵循<code>XHTML</code>标准，标签、属性、属性命名由小写英文、数字和_组成，且所有标签必须闭合，属性值必须用双引号""，避免使用中文拼音尽量简易并要求语义化。</p>
+						<pre>
+							<code>CLASS --&gt; nHeadTitle --&gt; CLASS遵循小驼峰命名法（little camel-case）</code><br />
+							<code>ID --&gt; n_head_title --&gt; ID遵循名称+_</code><br />
+							<code>NAME --&gt; N_Head_Title --&gt; NAME属性命名遵循首个字母大写+_</code><br />
+							<code>&lt;div class="nHeadTitle" id="n_head_title" name="N_Head_Title"&gt;&lt;/div&gt;</code>
+						</pre>
+						<p>当<code>JAVASCRIPT</code>获取单个元素时，通常使用document.getElementById来获取dom元素，document.getElementById兼容所有浏览器，但IE浏览器会混淆元素的ID和NAME属性，所以要区分ID和NAME命名。</p>
+						<pre>
+							<code>&lt;input type="text" name="test"&gt;</code>
+							<code>&lt;div id="test"&gt;&lt;/div&gt;</code>
+							<code>&lt;button onclick="alert(document.getElementById('test').tagName)"&gt;</button></code>
+						</pre>
+					</li>
+					<li>特殊符号应使用转意符。
+						<pre>
+						<code>lt，gt，nbsp</code>
+					</pre>
+					</li>
+					<li>含有描述性表单元素（<code>INPUT</code>，<code>TEXTAREA</code>）添加<code>LABEL</code>。
+						<pre>
+							<code>&lt;p&gt;</code><br />
+							&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;label for="test"&gt;测试&lt;/label&gt;</code><br />
+							&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;input type="text" id="test" /&gt;</code><br />
+							<code>&lt;p&gt;</code>
+						</pre>
+					</li>
+					<li>多用无兼容性问题的<code>HTML</code>内置标签，比如<code>SPAN</code>、<code>EM</code>、<code>STRONG</code>、<code>OPTGROUP</code>、<code>LABEL</code>等,需要自定义<code>HTML</code>标签属性时，首先考虑是否存在已有的合适标签可替换，如果没有，可使用须以“<code>data-</code>”为前缀来添加自定义属性，避免使用其他命名方式。</li>
+					<li>语义化<code>HTML</code>。</li>
+					<li>尽可能减少<code>&lt;DIV&gt;</code>嵌套。</li>
+					<li>书写链接地址时避免重定向。
+						<pre>
+							<code>href="http://www.kahn1990.com/" //即在URL地址后面加“/”</code>
+						</pre>
+					</li>
+					<li><code>HTML</code>中对于属性的定义，确保全部使用双引号，绝不要使用单引号</li>
+				</ul>
+			</blockquote>
+			<h2 id='5f'>Css书写规范：</h2>
+			<blockquote>
+				<ul>
+					<li>为了欺骗<code>W3C</code>的验证工具,可将代码分为两个文件，一个是针对所有浏览器,一个只针对IE。即将所有符合<code>W3C</code>的代码写到一个文件中,而一些IE中必须而又不能通过<code>W3C</code>验证的代码（如:<code>cursor:hand;</code>）放到另一个文件中，再用下面的方法导入。
+						<pre>
+							<code>&lt;!-- 放置所有浏览器样式--&gt;</code><br />
+							<code>&lt;link rel="stylesheet" type="text/css" href=""&gt;</code><br />
+							<code>&lt;!-- 只放置IE必须，而不能通过w3c的--&gt;</code><br />
+							<code>&lt;!--[if IE]&gt;</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href=""&gt;</code><br />
+							<code>&lt;![endif]--&gt;</code>
+						</pre>
+					</li>
+					<li><code>CSS</code>样式新建或修改尽量遵循以下原则。
+						<pre>
+							<code>根据新建样式的适用范围分为三级：全站级、产品级、页面级。</code><br />
+							<code>尽量通过继承和层叠重用已有样式。</code><br />
+							<code>不要轻易改动全站级CSS。改动后，要经过全面测试。</code>
+						</pre>
+					</li>
+					<li>CSS属性显示顺序。
+						<pre>
+							<code>显示属性</code><br />
+							<code>元素位置</code><br />
+							<code>元素属性</code><br />
+							<code>元素内容属性</code>
+						</pre>
+						<p><code>CSS</code>书写顺序。</p>
+						<pre>
+							<code>.header {</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;/* 显示属性 */</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;display || visibility</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;list-style</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;position top || right || bottom || left</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;z-index</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;clear</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;float</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;/* 自身属性 */</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;width max-width || min-width</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;height max-height || min-height</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;overflow || clip</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;margin</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;padding</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;outline</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;border</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;background</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;/* 文本属性 */</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;color</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;font</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;text-overflow</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;text-align</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;text-indent</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;line-height</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;white-space</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;vertical-align</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;cursor</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;content</code><br />
+							<code>}</code>
+						</pre>
+						<p>兼容多个浏览器时，将标准属性写在底部。</p>
+						<pre>
+							<code>-moz-border-radius: 15px; /* Firefox */</code><br />
+							<code>-webkit-border-radius: 15px; /* Safari和Chrome */</code><br />
+							<code>border-radius: 15px; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 *//标准属性</code>
+						</pre>
+					</li>
+					<li>使用选择器时，命名比较短的词汇或者缩写的不允许直接定义样式。
+						<pre>
+							<code>.hd,.bd,.td{};//如这些命名</code>
+						</pre>
+						<p>可用上级节点进行限定。</p>
+						<pre>
+							<code>.recommend-mod .hd</code>
+						</pre>
+						<p>多选择器规则之间换行，即当样式针对多个选择器时每个选择器占一行。</p>
+						<pre>
+							<code>button.btn,</code><br />
+							<code>input.btn,</code><br />
+							<code>input[type="button"] {…};</code>
+						</pre>
+						<p>优化<code>CSS</code>选择器。</p>
+						<pre>
+							<code>#header a { color: #444; };/*CSS选择器是从右边到左边进行匹配*/</code>
+						</pre>
+						<p>浏览器将检查整个文档中的所有链接和每个链接的父元素，并遍历文档树去查找ID为header的祖先元素，如果找不到header将追溯到文档的根节点，解决方法如下。</p>
+						<pre>
+							<code>避免使用通配规则和相邻兄弟选择符、子选择符,、后代选择符、属性选择符等选择器</code><br />
+							<code>不要限定id选择符，如div#header（提权的除外）</code><br />
+							<code>不要限定类选择器，如ul.recommend（提权的除外）</code><br />
+							<code>不要使用 ul li a 这样长的选择符</code><br />
+							<code>避免使用标签子选择符，如#header > li > a</code>
+						</pre>
+					</li>
+					<li>使用<code>z-index</code>属性尽量<code>z-index</code>的值不要超过150（通用组的除外），页面中的元素内容的<code>z-index</code>不能超过10（提示框等模块除外但维持在150以下），不允许直接使用（999~9999）之间大值。</li>
+					<li>尽量避免使用CSS Hack。
+						<pre>
+							<code>property:value; /* 所有浏览器 */</code><br />
+							<code>+property:value; /* IE7 */</code><br />
+							<code>_property:value; /* IE6 */</code><br />
+							<code>*property:value; /* IE6/7 */</code><br />
+							<code>property:value\9; /* IE6/7/8/9，即所有IE浏览器 */</code>
+						</pre>
+						<pre>
+							<code>* html selector { … }; /* IE6 */</code><br />
+							<code>*:first-child+html selector { … }; /* IE7 */</code><br />
+							<code>html>body selector { … }; /* 非IE6 */</code><br />
+							<code>@-moz-document url-prefix() { … }; /* firefox */</code><br />
+							<code>@media all and (-webkit-min-device-pixel-ratio:0) { … }; /* saf3+/chrome1+ */</code><br />
+							<code>@media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) { … }; /* opera */</code><br />
+							<code>@media screen and (max-device-width: 480px) { … }; /* iPhone/mobile webkit */</code>
+						</pre>
+						<p>避免使用低效的选择器。</p>
+						<pre>
+							<code>body > * {…};</code><br />
+							<code>ul > li > a {…};</code><br />
+							<code>#footer > h3 {…};</code><br />
+							<code>ul#top_blue_nav {…};</code><br />
+							<code>#searbar span.submit a { … }; /* 反面示例 */</code>
+						</pre>
+					</li>
+					<li>减少使用影响性能的属性。
+						<pre>
+							<code>position:absolute;</code><br />
+							<code>float:left;//如这些定位或浮动属性</code>
+						</pre>
+						<p>减少在CSS中使用滤镜表达式和图片repeat，尤其在body当中，渲染性能极差，如果需要用repeat的话，图片的宽或高不能少于8px。</p>
+					</li>
+				</ul>
+			</blockquote>
+			<h2 id='6f'>JavaScript书写规范：</h2>
+			<blockquote>
+				<ul>
+					<li>命名规范。
+						<pre>
+							<code>常量名</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;全部大写并单词间用下划线分隔</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;如：CSS_BTN_CLOSE、TXT_LOADING</code><br />
+							<code>对象的属性或方法名</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;小驼峰式（little camel-case）</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;如：init、bindEvent、updatePosition</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;示例：Dialog.prototype = {</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init: function () {},</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bindEvent: function () {},</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updatePosition: function () {}</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;…</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;};</code><br />
+							<code>类名（构造器）</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;小驼峰式但首字母大写</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;：Current、DefaultConfig</code><br />
+							<code>函数名</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;小驼峰式</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;如：current()、defaultConfig()</code><br />
+							<code>变量名</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;小驼峰式</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;如：current、defaultConfig</code><br />
+							<code>私有变量名</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;小驼峰式但需要用_开头</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;如：_current、_defaultConfig</code>
+						</pre>
+					</li>
+					<li>代码格式。
+						<pre>
+							<code>"()"前后需要跟空格</code><br />
+							<code>"="前后需要跟空格</code><br />
+							<code>","后面需要跟空格</code><br />
+							<code>JSON对象需格式化对象参数</code><br />
+							<code>if、while、for、do语句的执行体用"{}"括起来</code>
+						</pre>
+						<p>"{}"格式如下。</p>
+						<pre>
+							<code>if (a==1) {</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;//代码</code>
+							<code>};</code>
+						</pre>
+						<p>避免额外的逗号。</p>
+						<pre>
+							<code>var arr = [1,2,3,];</code>
+						</pre>
+						<p><code>for-in</code>循环体中必须用<code>hasOwnProperty</code>方法检查成员是否为自身成员，避免来自原型链上的污染。</p>
+					</li>
+					<li>长语句可考虑断行。
+						<pre>
+							<code>TEMPL_SONGLIST.replace('{TABLE}', da['results'])</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;.replace('{PREV_NUM}', prev)</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;.replace('{NEXT_NUM}', next)</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;.replace('{CURRENT_NUM}', current)</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;.replace('{TOTAL_NUM}', da.page_total);</code>
+						</pre>
+						<p>为了避免和<code>JSLint</code>的检验机制冲突，“.”或“+”这类操作符放在行尾。</p>
+						<p>如果模块代码中，使用其它全局变量想跳过JSLint的检查，可以在该文件中加入<code>/*global*/</code>声明。</p>
+						<pre>
+							<code>/*global alert: true, console: true, top: true, setTimeout: true */</code>
+						</pre>
+					</li>
+					<li>使用严格的条件判断符。用===代替==，用!==代替!=，避免掉入==造成的陷阱在条件判断时，这样的一些值表示false。
+						<pre>
+							<code>null</code><br />
+							<code>undefined与null相等</code><br />
+							<code>字符串''</code><br />
+							<code>数字0</code><br />
+							<code>NaN</code><br />
+						</pre>
+						<p>在==时，则会有一些让人难以理解的陷阱。</p>
+						<pre>
+							<code>var undefined;</code><br />
+							<code>undefined == null; // true</code><br />
+							<code>1 == true; //true</code><br />
+							<code>2 == true; // false</code><br />
+							<code>0 == false; // true</code><br />
+							<code>0 == ''; // true</code><br />
+							<code>NaN == NaN;// false</code><br />
+							<code>[] == false; // true</code><br />
+							<code> [] == ![]; // true</code>
+						</pre>
+						<p>对于不同类型的 == 判断，有这样一些规则，顺序自上而下：</p>
+						<pre>
+							<code>undefined与null相等</code><br />
+							<code>一个是number一个是string时，会尝试将string转换为number</code><br />
+							<code>尝试将boolean转换为number</code><br />
+							<code>0或1</code><br />
+							<code>尝试将Object转换成number或string</code>
+						</pre>
+						<p>而这些取决于另外一个对比量，即值的类型，所以对于0、空字符串的判断，建议使用<code>===</code></p>
+						<p><code>===</code>会先判断两边的值类型，类型不匹配时为false。</p>
+					</li>
+					<li>下面类型的对象不建议用new构造
+						<pre>
+							<code>new Number</code><br />
+							<code>new String</code><br />
+							<code>new Boolean</code><br />
+							<code>new Object //用{}代替</code><br />
+							<code>new Array //用[]代替</code>
+						</pre>
+						<p>引用对象成员用obj.prop代替obj["prop"]，除非属性名是变量。</p>
+					</li>
+					<li>从number到string的转换。
+						<pre>
+							<code>/** 推荐写法*/</code><br />
+							<code>var a = 1;</code><br />
+							<code>typeof(a); //"number"</code><br />
+							<code>console.log(a); //1</code><br />
+							<code>var aa=a+'';</code><br />
+							<code>typeof(aa); //"string"</code><br />
+							<code>console.log(aa); //'1'</code><br />
+							<code>/** 不推荐写法*/</code><br />
+							<code>new String(a)或a.toString()</code>
+						</pre>
+						<p>从string到number的转换，使用parseInt，必须显式指定第二个参数的进制。</p>
+						<pre>
+							<code>/** 推荐写法*/</code><br />
+							<code>var a = '1';</code><br />
+							<code>var aa = parseInt(a,10);</code><br />
+							<code>typeof(a); //"string"</code><br />
+							<code>console.log(a); //'1'</code><br />
+							<code>typeof(aa); //"number"</code><br />
+							<code>console.log(aa); //1</code>
+						</pre>
+						<p>从float到integer的转换。</p>
+						<pre>
+							<code>/** 推荐写法*/</code><br />
+							<code>Math.floor/Math.round/Math.ceil</code><br />
+							<code>/** 不推荐写法*/</code><br />
+							<code>parseInt</code>
+						</pre>
+						<p>字符串拼接应使用数组保存字符串片段，使用时调用join方法。避免使用+或+=的方式拼接较长的字符串，每个字符串都会使用一个小的内存片段，过多的内存片段会影响性能。</p>
+						<pre>
+							<code>/**推荐的拼接方式array的push、join*/</code><br />
+							<code>var str=[], list=['测试A','测试B'];</code><br />
+							<code>for (var i=0 , leng=list.length; i < leng; i++) {</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;str.push( '&lt;div&gt;'+ list[i] + '&lt;/div&gt;');</code><br />
+							<code>};</code><br />
+							<code>console.log(str.join('')); //&lt;div&gt;测试A&lt;/div&gt;&lt;div&gt;测试B&lt;/div&gt;</code><br />
+							<code>/** 不推荐的拼接方式+=*/</code><br />
+							<code>var str = '', list=['测试A','测试B'];</code><br />
+							<code>for (var i = 0, len = list.length; i< len; i++) {</code><br />
+							<code>&nbsp;&nbsp;&nbsp;&nbsp;str+='&lt;div&gt;' + list[i] + '&lt;/div&gt;';</code><br />
+							<code>};</code><br />
+							<code>console.log(str); //&lt;div&gt;测试A&lt;/div&gt;&lt;div&gt;测试B&lt;/div&gt;</code>
+						</pre>
+					</li>
+					<li>尽量避免使用存在兼容性及消耗资源的方法或属性。
+						<pre>
+							<code>不要使用with，void，evil，eval_r，innerText</code>
+						</pre>
+					</li>
+					<li>注重<code>HTML</code>分离, 减小<code>reflow</code>, 注重性能。</li>
+				</ul>
+			</blockquote>
+			<h2 id='7f'>图片规范：</h2>
+			<blockquote>
+				<ul>
+					<li>命名应用小写英文、数字、_组合，便于团队其他成员理解。
+						<pre>
+							<code>header_btn.gif</code><br />
+							<code>header_btn2.gif</code>
+						</pre>
+					</li>
+					<li>页面元素类图片均放入img文件夹，测试用图片放于img/testimg文件夹，psd源图放入img/psdimg文件夹。</li>
+					<li>图片格式仅限于gif、png、jpg等。</li>
+					<li>用png图片做图片时，要求图片格式为png-8格式，若png-8实在影响图片质量或其中有半透明效果，请为ie-6单独定义背景，并尽量避免使用半透明的png图片。</li>
+					<li>背景图片请尽可能使用sprite技术，减小http请求。</li>
+				</ul>
+			</blockquote>
+			<h2 id='8f'>注释规范：</h2>
+			<blockquote>
+				<ul>
+					<li><code>JAVASCRIPT</code>、<code>CSS</code>文件注释需要标明作者、文件版本、创建/修改时间、重大版本修改记录、函数描述、文件版本、创建或者修改时间、功能、作者等信息。
+						<pre>
+							<code>/* * 注释块 */</code>
+						</pre>
+						<p>中间可添加如下信息。
+							<pre>
+								<code>@file 文件名</code><br />
+								<code>@addon 把一个函数标记为另一个函数的扩张，另一个函数的定义不在源文件中</code><br />
+								<code>@argument 用大括号中的自变量类型描述一个自变量</code><br />
+								<code>@author 函数/类作者的姓名</code><br />
+								<code>@base 如果类是继承得来，定义提供的类名称</code><br />
+								<code>@class 用来给一个类提供描述，不能用于构造器的文档中</code><br />
+								<code>@constructor 描述一个类的构造器</code><br />
+								<code>@deprecated 表示函数/类已被忽略</code><br />
+								<code>@exception 描述函数/类产生的一个错误</code><br />
+								<code>@exec @extends 表示派生出当前类的另一个类</code><br />
+								<code>@fileoverview 表示文档块将用于描述当前文件，这个标签应该放在其它任何标签之前</code><br />
+								<code>@final 指出函数/类</code><br />
+								<code>@ignore 让jsdoc忽视随后的代码</code><br />
+								<code>@link 类似于@link标签，用于连接许多其它页面</code><br />
+								<code>@member 定义随后的函数为提供的类名称的一个成员</code><br />
+								<code>@param 用大括号中的参数类型描述一个参数</code><br />
+								<code>@private 表示函数/类为私有，不应包含在生成的文档中</code><br />
+								<code>@requires 表示需要另一个函数/类</code><br />
+								<code>@return 描述一个函数的返回值</code><br />
+								<code>@see 连接到另一个函数/类</code><br />
+								<code>@throws 描述函数/类可能产生的错误</code><br />
+								<code>@type 指定函数/成员的返回类型</code><br />
+								<code>@version 函数/类的版本号</code>
+							</pre>
+						</p>
+					</li>
+				</ul>
+			</blockquote>
+			<h2 id='9f'>开发及测试工具：</h2>
+			<blockquote>
+				<ul>
+					<li>编码格式化，三码统一。</li>
+					<li>测试工具: 前期开发仅测试FireFox & IE8 & IE9 & IE10+& Opera &Chrome & Safari，IE6,IE7视情况而定。</li>
+				</ul>
+			</blockquote>
+			<h2 id='10f'>其他：</h2>
+			<blockquote>
+				<ul>
+					<li>命名规则示例
+						<pre>
+							<code>头：header </code><br />
+							<code>内容：content/container </code><br />
+							<code>尾：footer</code><br />
+							<code>导航：nav </code><br />
+							<code>侧栏：sidebar </code><br />
+							<code>栏目：column</code><br />
+							<code>页面外围控制整体布局宽度：wrapper </code><br />
+							<code>左右中：left right center</code><br />
+							<code>登录条：loginbar</code><br />
+							<code>标志：logo</code><br />
+							<code>广告：banner </code><br />
+							<code>页面主体：main</code><br />
+							<code>热点：hot </code><br />
+							<code>新闻：news</code><br />
+							<code>下载：download</code><br />
+							<code>子导航：subnav </code><br />
+							<code>菜单：menu</code><br />
+							<code>子菜单：submenu </code><br />
+							<code>搜索：search </code><br />
+							<code>友情链接：friendlink/link</code><br />
+							<code>版权：copyright</code><br />
+							<code>滚动：scroll</code><br />
+							<code>内容：content </code><br />
+							<code>标签页：tab</code><br />
+							<code>列表：list </code><br />
+							<code>信息：msg</code><br />
+							<code>小提示：tips</code><br />
+							<code>标题：title </code><br />
+							<code>加入：joinus</code><br />
+							<code>指南：guild</code><br />
+							<code>服务：service </code><br />
+							<code>注册：regsiter</code><br />
+							<code>状态：status</code><br />
+							<code>投票：vote</code><br />
+							<code>合作伙伴：partner</code><br />
+						</pre>
+					</li>
+				</ul>
+			</blockquote>
+			<h2 id='11f'>版本历史：</h2>
+			<blockquote>
+				<table>
+					<tr>
+						<th>版本</th>
+						<th>参与者</th>
+						<th>修改日期</th>
+						<th>备注</th>
+					</tr>
+					<tr>
+						<td>1.0.0</td>
+						<td>邓佳俊</td>
+						<td>2016-10-08</td>
+						<td>创建</td>
+					</tr>
+				</table>
+			</blockquote>
+		</div>
+	</body>
+
+</html>

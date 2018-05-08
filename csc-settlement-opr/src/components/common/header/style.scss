@@ -1,0 +1,116 @@
+.head-top {
+    position: relative;
+    z-index: 10;
+    height: 60px;
+    padding: 0 20px;
+    background-color: #555999;
+
+    &_log {
+        width: 17%;
+        height: 60px;
+        line-height: 60px;
+        vertical-align: middle;
+    }
+
+    .navbar-style {
+        height: 60px;
+    }
+
+    &_navbar {
+        width: 80%;
+        @extend .navbar-style;
+        margin-left: 3%;
+        font-size: 14px;
+
+        .navbar-box {
+            @extend .navbar-style;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        li.one-level {
+            float: left;
+            position: relative;
+            display: table;
+            width: 128px;
+            height: 60px;
+            text-align: center;
+
+            .li-group {
+                display: table-cell;
+                vertical-align: middle;
+
+                figcaption {
+                    margin-top: 5px;
+                    color: white;
+                }
+            }
+
+            //&.active,
+            &:hover {
+                background-color: #4c4e76;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1px;
+                @extend .navbar-style;
+                box-shadow: -1px 0 0 #474b80;
+                background-color: #6469b3;
+            }
+
+            &:hover .dropdown-box {
+                display: block;
+            }
+
+            .dropdown-box {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 1px;
+                background-color: #f5f8fa;
+                box-shadow: 0 0 5px hsla(0,0%,50%,.35);
+
+                .frist-drop-down {
+                    width: 128px;
+                    padding: 0;
+
+                    li {
+                        position: relative;
+                        width: 100%;
+                        height: 32px;
+                        line-height: 32px;
+                        background-color: white;
+                        
+                        a {
+                            display: block;
+                            color: #2e3133;
+                        }
+
+                        a:hover {
+                            color: #23b8f6;
+                        }
+
+                        .after-group {
+                            display: none;
+                            position: absolute;
+                            left: 128px;
+                            top: 0;
+                            width: 100%;
+                            padding: 0;
+                            box-shadow: 3px 0 5px hsla(0,0%,50%,.35);
+                        }
+                    }
+
+                    li:hover > .after-group {
+                        display: block;
+                    }
+                }
+            }                           
+        }
+    }
+}

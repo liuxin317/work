@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="hello">
+    <meta name="keywords" content="a,b,c">
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>订单管理</title>
+    <script type="text/javascript" src="content/js/cord.js"></script>
+    <link rel="stylesheet" type="text/css" href="content/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/fhmx.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/ddgl.css" />
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div class="content">
+		<div class="box">
+			<h2 class="title">订单编号：1234567891234567</h2>
+
+			<ul class="details-listed">
+				<li>
+					<div class="pull-left list-group no-border-right">下单用户：杨恒</div>
+					<div class="pull-left list-group">下单用户：杨恒</div>
+					<div class="clear"></div>
+				</li>
+				<li>
+					<p class="pull-left">下单时间：</p>
+					<p class="pull-right">2017/9月29 &nbsp &nbsp 17:34:39</p>
+					<divc class="lear"></divc>
+				</li>
+				<li>
+					<p class="pull-left">下单时间：</p>
+					<p class="pull-right">2017/9月29 &nbsp &nbsp 17:34:39</p>
+					<divc class="lear"></divc>
+				</li>
+				<li>
+					<p class="pull-left">下单时间：</p>
+					<p class="pull-right">2017/9月29 &nbsp &nbsp 17:34:39</p>
+					<divc class="lear"></divc>
+				</li>
+				<li>
+					<div class="pull-left list-group">租赁押金：<em>￥</em>300</div>
+					<div class="pull-left list-group">租赁分钟数：5分钟</div>
+					<div class="clear"></div>
+				</li>
+				<li>
+					<div class="pull-left list-group">租赁押金：<em>￥</em>300</div>
+					<div class="pull-left list-group">租赁分钟数：5分钟</div>
+					<div class="clear"></div>
+				</li>
+				<li>
+					<div class="pull-left list-group">租赁押金：<em>￥</em>300</div>
+					<div class="pull-left list-group">租赁分钟数：5分钟</div>
+					<div class="clear"></div>
+				</li>
+				<li>
+					<div class="pull-left list-group">平台入账：<em>￥</em>300</div>
+					<div class="pull-left list-group"></div>
+					<div class="clear"></div>
+				</li>
+			</ul>
+
+			<ul class="details-listed">
+				<li>
+					<p>发货点：镇江楼客栈镇江楼客栈镇江楼客栈</p>
+				</li>
+				<li>
+					<div class="pull-left list-group">发货人：小玄子</div>
+					<div class="pull-left list-group">回收人：小玄子</div>
+					<div class="clear"></div>
+				</li>
+				<li>
+					<p>回收点：镇江楼客栈镇江楼客栈镇江楼客栈</p>
+				</li>
+				<li>
+					<div class="pull-left list-group">订单状态：已退款</div>
+					<div class="pull-left list-group">操作：<a href="javascript: ">查看</a></div>
+					<div class="clear"></div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="box">
+			<h2 class="title">订单编号：1234567891234567</h2>
+
+			<ul class="details-listed">
+				<li>
+					<div class="pull-left list-group no-border-right">下单用户：杨恒</div>
+					<div class="pull-left list-group">下单用户：杨恒</div>
+					<div class="clear"></div>
+				</li>
+				<li>
+					<div class="pull-left list-group">租赁押金：<em>￥</em>300</div>
+					<div class="pull-left list-group">租赁分钟数：5分钟</div>
+					<div class="clear"></div>
+				</li>
+				<li>
+					<div class="pull-left list-group">租赁押金：<em>￥</em>300</div>
+					<div class="pull-left list-group">租赁分钟数：5分钟</div>
+					<div class="clear"></div>
+				</li>
+				<li>
+					<div class="pull-left list-group">租赁押金：<em>￥</em>300</div>
+					<div class="pull-left list-group">租赁分钟数：5分钟</div>
+					<div class="clear"></div>
+				</li>
+				<li>
+					<div class="pull-left list-group">平台入账：<em>￥</em>300</div>
+					<div class="pull-left list-group"></div>
+					<div class="clear"></div>
+				</li>
+			</ul>
+
+			<ul class="details-listed">
+				<li>
+					<p>发货点：镇江楼客栈镇江楼客栈镇江楼客栈</p>
+				</li>
+				<li>
+					<div class="pull-left list-group">发货人：小玄子</div>
+					<div class="pull-left list-group">回收人：小玄子</div>
+					<div class="clear"></div>
+				</li>
+				<li>
+					<p>回收点：镇江楼客栈镇江楼客栈镇江楼客栈</p>
+				</li>
+				<li>
+					<div class="pull-left list-group">订单状态：已退款</div>
+					<div class="pull-left list-group">操作：<a href="javascript: ">查看</a></div>
+					<div class="clear"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="paging fixed-btm">
+		<div class="pull-left btn-group btn-style">
+			<div class="loading">
+				<img src="content/images/loading.gif" alt="" />
+			</div>
+			<a href="javascript: ">上一页</a>
+		</div>
+
+		<div class="pull-right btn-group btn-style">
+			<div class="loading">
+				<img src="content/images/loading.gif" alt="" />
+			</div>
+			<a href="javascript: ">下一页</a>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+	<script type="text/javascript" src="content/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="content/js/public.js"></script>
+</body>
+</html>

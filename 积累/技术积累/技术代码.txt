@@ -1,0 +1,212 @@
+var newTime = new Date().Format("yyyy-MM-dd h:m:s");
+newTime = newTime.replace(new RegExp("-","gm"),"/"); //替换字符;
+newTime = new Date(newTime).getTime(); //讲时间转换成时间戳;
+
+//日期格式化
+Date.prototype.Format = function (fmt) {
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+
+function getTimes(times){ //时间戳转化日期格式;
+    var d = new Date(times);
+    return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+};
+
+var re = /^((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)$/;手机号码正则;
+
+
+this出现在一个构造函数里面
+
+function test(){
+	this.x = 1;
+};
+
+var o = new test();
+
+//apply call bing其改变函数的对象;
+
+
+//验证非零正整数
+
+var re = /^\+?[1-9][0-9]*$/;
+
+15位数身份证验证正则表达式：
+isIDCard1=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/; 
+
+18位数身份证验证正则表达式 ：
+isIDCard2=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+
+
+//检测页面是否加载完成
+document.onreadystatechange = subSomething;//当页面加载状态改变的时候执行这个方法.  
+
+function subSomething(){ 
+	if(document.readyState == "complete"){//当页面加载状态已完成; 
+		$(".initialization").fadeOut(200);
+	};
+};
+
+
+//下拉刷新;
+function touchYDenovate(){
+	var startY,moveEndY,Y;
+	$(document).append('<img class="loading-top" src="../../../images/loading_top.png" alt="" />');
+	$(document).on("touchstart", function(e) {
+//	    e.preventDefault();
+//	    startX = e.originalEvent.changedTouches[0].pageX;
+	    startY = e.originalEvent.changedTouches[0].pageY;
+	});
+	
+	$(document).on("touchmove",function(e){
+//		e.preventDefault();
+//		moveEndX = e.originalEvent.changedTouches[0].pageX,
+	    moveEndY = e.originalEvent.changedTouches[0].pageY;
+//	    X = moveEndX - startX,
+	    Y = moveEndY - startY;
+		var newTopMarg = $(this).scrollTop();
+		if(Y >= 0){
+			if(Y>=100){
+				Y =  100;
+			};
+			
+			if(newTopMarg === 0){
+				e.preventDefault();
+				$(".loading-top").css({
+					"top":Y,
+					"transform": "rotate("+ Y*2 +"deg)",
+					"-webkit-transform": "rotate("+ Y*2 +"deg)"
+				});
+				$(document).on("touchend", function(e) {
+			//	    e.preventDefault();
+			//	    startX = e.originalEvent.changedTouches[0].pageX;
+			//	    startY = e.originalEvent.changedTouches[0].pageY;
+					
+					if(Y >= 50){
+						$(".loading-top").animate({
+							"top": "20px"
+						},500,function(){
+							$(".loading-top").css({
+								"transform": "rotate(-720deg)",
+								"-webkit-transform": "rotate(-720deg)",
+								"transition": "ease-in 1s",
+								"-webkit-transition": "ease-in 1s"
+							});
+						});
+						
+						setTimeout(function(){
+							window.location.reload();
+						},1500);
+					}else{
+						$(".loading-top").animate({
+							"top": "-200px",
+							"transform": "rotate(0deg)",
+							"-webkit-transform": "rotate(0deg)",
+							"animation": "move 1s ease-out"
+						},1000);
+					};
+				});
+			}else{
+				$(document).off("touchend");
+			};
+		};
+	});
+};
+
+
+toLocaleTimeString() - 转化new Date() 为时间；
+
+
+var testPassW = /^(((\d+[a-zA-Z]+)|([a-zA-Z]+\d+))[0-9a-zA-Z]*)$/; 验证数字和字母的组合;
+
+
+
+js获取日期：前天、昨天、今天、明天、后天
+
+function GetDateStr(AddDayCount) { 
+	var dd = new Date(); 
+	dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期 
+	var y = dd.getFullYear(); 
+	var m = dd.getMonth()+1;//获取当前月份的日期 
+	var d = dd.getDate(); 
+	return y+"-"+m+"-"+d; 
+};
+
+document.write("前天："+GetDateStr(-2)); 
+document.write("<br />昨天："+GetDateStr(-1)); 
+document.write("<br />今天："+GetDateStr(0)); 
+document.write("<br />明天："+GetDateStr(1)); 
+document.write("<br />后天："+GetDateStr(2)); 
+document.write("<br />大后天："+GetDateStr(3)); 
+
+
+上传ajax进度条
+
+xhr: function(){  
+					var xhr = $.ajaxSettings.xhr();  
+					if(onprogress && xhr.upload) {  
+						xhr.upload.addEventListener("progress" , onprogress, false);  
+						return xhr;  
+					}  
+				}
+
+
+/**  
+		* 侦查附件上传情况 ,这个方法大概0.05-0.1秒执行一次  
+		*/  
+		function onprogress(evt){  
+			var loaded = evt.loaded;     //已经上传大小情况   
+			var tot = evt.total;      //附件总大小   
+			var per = Math.floor(100*loaded/tot);  //已经上传的百分比   
+			// $("#son").html( per +"%" );  
+			$("#son").css("width" , per +"%");
+			if(per == 100){
+				$(".pro-box").fadeOut(0);
+			}  
+		} 
+
+
+# 获取cookie
+
+function getCookie(name) {
+  var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+  if(arr=document.cookie.match(reg))
+  return unescape(arr[2]);
+  else
+  return null;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

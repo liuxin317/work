@@ -1,0 +1,11 @@
+<svg id="完全选择" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #666a80;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="全选" class="cls-1" d="M260,251V235h16v16H260Zm15-15H261v14h14V236Zm-12.8,6.061,3.535,3.535,7.071-7.071,0.707,0.707-7.071,7.071h0l-0.707.707-0.707-.707h0l-3.535-3.535Z" transform="translate(-260 -235)"/>
+</svg>

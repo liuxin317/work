@@ -1,0 +1,69 @@
+.rule-box {
+    padding: 20px;
+
+    .search-group {
+        .search-button {
+            width: 32px;
+            height: 32px;
+            border-radius: 32px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 32px;
+            color: #fff;
+            vertical-align: middle;
+        }
+    }
+}
+
+.modal-details {
+    width: 680px !important;
+
+    .modal-right,
+    .modal-left {
+        position: relative;
+        width: 50%;
+    }
+
+    .modal-right {
+        padding-left: 30px;
+    }
+
+    .modal-left::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 100%;
+        background: radial-gradient(#e2e6e6, #ffffff);
+    }
+
+    .details-group {
+        h4 {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #2e3133;
+        }
+
+        .row {
+            margin-bottom: 10px;
+            font-size: 14px;
+            
+            span {
+                width: 35%;
+                text-align: right;
+                color: #5c6366;
+            }
+
+            em {
+                width: 65%;
+                color: #2e3133;
+
+                &.active > cite{
+                    padding: 3px 10px;
+                    background-color: #e9f8fe;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+@import "../../../vars";
+.search-right-btn {
+  margin-left: 800px;
+}
+
+.rule-common {
+  margin: 10px auto;
+}
+
+.checkboxStyle{
+  margin-top: 10px;
+}
+.opreate-style {
+  padding: 0px 10px 0px 10px;
+}
+
+//添加规则模态框
+.modalAging, .details {
+  .modal-name {
+    @extend .rule-common;
+    margin-left: 100px;
+    .rule-name {
+      display: inline-block;
+      width: 300px;
+      margin-left: 10px;
+    }
+  }
+  .modal-type {
+    @extend .rule-common;
+    margin-left: 100px;
+  }
+  .bg-font{
+    background-color: #e9f8fe;
+    padding: 5px;
+    border-radius:5px
+  }
+  .modal-limit {
+    @extend .rule-common;
+    margin-left: 100px;
+    .modal-limit-common {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .modal-limit-full {
+      @extend .modal-limit-common;
+      .modal-limit-full-cz {
+        color: red;
+        font-size: small;
+      }
+    }
+    .modal-limit-config {
+      margin-top: 10px;
+      .modal-limit-config-explain{
+        color: #0066FF;
+        font-size: small;
+        cursor: pointer;
+      }
+    }
+    .modal-limit-date {
+      @extend .modal-limit-common
+    }
+    .modal-limit-day {
+      @extend .modal-limit-common;
+      .modal-limit-day-start{
+        max-height: 100px;
+      }
+    }
+    .modal-limit-number {
+      @extend .modal-limit-common
+    }
+    .modal-limit-time {
+      @extend .modal-limit-common
+    }
+    .modal-limit-interval {
+      @extend .modal-limit-common;
+      .modal-limit-interval-set{
+        .details,.set{
+          color: #0066FF;
+          font-size: small;
+          cursor: pointer;
+        }
+      }
+    }
+    .modal-limit-ratio {
+      @extend .modal-limit-common;
+      .modal-limit-ratio-set{
+        .details,.set{
+          color: #0066FF;
+          font-size: small;
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+}
+
+//分期间隔设置
+.intervalSet,.intervalDetailsVisible{
+  .ant-radio-button-wrapper {
+    color: #000;
+    background-color: #999;
+  }
+  .ant-radio-button-wrapper-checked {
+    color: #000;
+    background-color: $primary-color;
+  }
+  .checkBox{
+    display: none;
+  }
+}
+//分期比例设置
+.ratioSet{
+  .ratioSet-div{
+    margin:5px 100px;
+    .ratioSet-input{
+      width:50px;
+    }
+  }
+}
+.modal-limit-day .ant-select-dropdown-menu{
+  max-height: 100px;
+}

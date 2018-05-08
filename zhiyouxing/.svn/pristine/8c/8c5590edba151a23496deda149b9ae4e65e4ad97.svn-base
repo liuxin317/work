@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="hello">
+    <meta name="keywords" content="a,b,c">
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>推荐佣金明细</title>
+    <script type="text/javascript" src="content/js/cord.js"></script>
+    <link rel="stylesheet" type="text/css" href="content/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/fhmx.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/yjmx.css" />
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div class="content">
+		<ul class="details-listed">
+			<li>
+				<p>推荐人：优客</p>
+			</li>
+			<li>
+				<p>被推荐人：阆中王家客栈</p>
+			</li>
+			<li>
+				<p>推荐时间：2017-09-27&nbsp &nbsp 16:08:48.217</p>
+			</li>
+			<li>
+				<p>结束计时时间：2017/9月29 &nbsp &nbsp 17:34:39</p>
+			</li>
+			<li>
+				<p>结束计时时间：2017/9月29 &nbsp &nbsp  17:34:39</p>
+			</li>
+			<li>
+				<p>发货时间：2017/9月29  &nbsp &nbsp 17:34:39</p>
+			</li>
+			<li class="no-border-right">
+				<div class="pull-left list-group">推荐佣金：<em>￥10元</em></div>
+				<div class="pull-left list-group">推荐状态：<em>已推荐</em></div>
+				<div class="clear"></div>
+			</li>
+		</ul>
+
+		<ul class="details-listed">
+			<li>
+				<p>推荐人：优客</p>
+			</li>
+			<li>
+				<p>被推荐人：阆中王家客栈</p>
+			</li>
+			<li>
+				<p>推荐时间：2017-09-27&nbsp &nbsp 16:08:48.217</p>
+			</li>
+			<li>
+				<p>结束计时时间：2017/9月29 &nbsp &nbsp 17:34:39</p>
+			</li>
+			<li>
+				<p>结束计时时间：2017/9月29 &nbsp &nbsp  17:34:39</p>
+			</li>
+			<li>
+				<p>发货时间：2017/9月29  &nbsp &nbsp 17:34:39</p>
+			</li>
+			<li class="no-border-right">
+				<div class="pull-left list-group">推荐佣金：<em>￥10元</em></div>
+				<div class="pull-left list-group">推荐状态：<em>已推荐</em></div>
+				<div class="clear"></div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="paging fixed-btm">
+		<div class="pull-left btn-group btn-style">
+			<div class="loading">
+				<img src="content/images/loading.gif" alt="" />
+			</div>
+			<a href="javascript: ">上一页</a>
+		</div>
+
+		<div class="pull-right btn-group btn-style">
+			<div class="loading">
+				<img src="content/images/loading.gif" alt="" />
+			</div>
+			<a href="javascript: ">下一页</a>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+	<script type="text/javascript" src="content/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="content/js/public.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<link rel = "Shortcut Icon" href=public/favicon.ico>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" type="text/css" href="public/css/common.css">
+<link rel="stylesheet" type="text/css" href="public/css/adaptive-columns.css">
+<title>Adaptive Notebook</title>
+</head>
+
+
+<body>
+	<div class="nav">
+		<div class="navbar">
+			<span><a href="adaptive.html" name="logo" class="logo"> LOGo </a></span>
+			<span class="ada_description">Adaptive Notebook</span>
+			<span class="navber-right"><a href="javascript:vid()" name="logo" > ··· </a></span>
+			<span class="cle"></span>
+		</div>
+	</div>
+	<div class="container">
+		<div class="main">
+			<dt>
+				针对移动设备的运用，如果你想让样式工作得比较正常，需要在“< head >”添加“viewport”的meta标签
+			</dt>
+			<dd>
+				< meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				你可能希望在不同的设备下调用不同的样式文件，方便管理或者维护，那么你可以按下面的这种方式进行调用
+			</dt>
+			<dd>
+				< link rel="stylesheet" media="screen and (min-device-width : 320px) and (max-device-width: 480px)" href="iphone.css" />
+			<br/>
+				< link rel="stylesheet" media="screen and (min-device-width : 768px) and (max-device-width : 1024px)" href="ipad.css" />
+
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				Phone和Smartphones
+			</dt>
+			<dd>
+				@media screen and (min-device-width : 320px) and (max-device-width: 480px) {
+							<p class="main-dt">/* CSS Styles */</p>
+						}
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				iPads (landscape)
+			</dt>
+			<dd>
+				@media screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)
+				{
+							<p>/* CSS Styles */</p>
+				}
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				1024px显屏
+			</dt>
+			<dd>
+				@media screen and (max-width : 1024px)
+				{
+							<p>/* CSS Styles */</p>
+				}
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				800px显屏
+			</dt>
+			<dd>
+				@media screen and (max-width : 800px)
+				{
+							<p>/* CSS Styles */</p>
+				}
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				640px显屏
+			</dt>
+			<dd>
+				@media screen and (max-width : 640px)
+				{
+							<p>/* CSS Styles */</p>
+				}
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				iPad横板显屏
+			</dt>
+			<dd>
+				@media screen and (max-device-width: 1024px) and (orientation: landscape)
+				{
+							<p>/* CSS Styles */</p>
+				}
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				iPad竖板显屏
+			</dt>
+			<dd>
+				@media screen and (max-device-width: 768px) and (orientation: portrait)
+				{
+							<p>/* CSS Styles */</p>
+				}
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				iPhone 和 Smartphones
+			</dt>
+			<dd>
+				@media screen and (min-device-width: 320px) and (min-device-width: 480px)
+				{
+							<p>/* CSS Styles */</p>
+				}
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				iPhone4
+			</dt>
+			<dd>
+				@media only screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5)
+				{
+							<p>/* CSS Styles */</p>
+				}
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				Retian屏幕和普通屏幕
+			</dt>
+			<dd>
+				@media only screen and (min-width: 320px)
+				{
+
+				  <p>/* Small screen, non-retina */</p>
+
+				}
+				<br/><br/>
+				@media
+				only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 320px),<br/>
+				only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 320px),<br/>
+				only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 320px),<br/>
+				only screen and (        min-device-pixel-ratio: 2)      and (min-width: 320px),<br/>
+				only screen and (                min-resolution: 192dpi) and (min-width: 320px),<br/>
+				only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
+				{ 
+
+				  <p>/* Small screen, retina, stuff to override above media query */</p>
+
+				}
+				<br/><br/>
+				@media only screen and (min-width: 700px) 
+				{
+
+				  <p>/* Medium screen, non-retina */</p>
+
+				}
+				<br/><br/>
+				@media
+				only screen and (-webkit-min-device-pixel-ratio: 2)and (min-width: 700px),<br/>
+				only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 700px),<br/>
+				only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 700px),<br/>
+				only screen and (        min-device-pixel-ratio: 2)      and (min-width: 700px),<br/>
+				only screen and (                min-resolution: 192dpi) and (min-width: 700px),<br/>
+				only screen and (                min-resolution: 2dppx)  and (min-width: 700px)
+				{
+
+				  <p>/* Medium screen, retina, stuff to override above media query */</p>
+
+				}
+				<br/><br/>
+				@media only screen and (min-width: 1300px)
+				{
+
+				  <p>/* Large screen, non-retina */</p>
+
+				}
+				<br/><br/>
+				@media
+				only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),<br/>
+				only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),<br/>
+				only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),<br/>
+				only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),<br/>
+				only screen and (                min-resolution: 192dpi) and (min-width: 1300px),<br/>
+				only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
+				{
+
+				  <p>/* Large screen, retina, stuff to override above media query */</p>
+
+				}
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				使用JavaScript:Retina屏幕选择图像
+			</dt>
+			<dd>
+				$(document).ready(function(){
+				  <p>if (window.devicePixelRatio > 1) {</p>
+				    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lowresImages = $('img');</p>
+				    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images.each(function(i) {</p>
+				      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lowres = $(this).attr('src');</p>
+				      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var highres = lowres.replace(".", "@2x.");</p>
+				      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).attr('src', highres);</p>
+				    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</p>
+				  <p>}</p>
+				});
+			</dd>
+		</div>
+		<div class="main">
+			<dt>
+				CSS中调用svg图像:Retina屏幕选择图像
+			</dt>
+			<dd>
+				<b>svg图像可以像普通图像一样，当作元素的背景图片来应用</b><br/>
+				.image {<br/>
+					  <p>background-image: url(example.svg);</p>
+					  <p>background-size: 200px 300px;</p>
+					  <p>height: 200px;</p>
+					  <p>width: 300px;</p>
+					}<br/><br/>
+				<b>除了当成元素的背景图片使用之外，还可以通过伪元素的“content”来调用</b><br/>
+				.image-container:before {<br/>
+					  <p>content: url(example.svg);</p>
+					}<br/><br/>
+				<b>IE7-8和Android2.x上运用</b><br/>
+				.image {<br/>
+				  <p>background-image: url(example.png);</p>
+				  <p>background-size: 200px 300px;</p>
+				}<br/><br/>
+
+				.svg {
+				  <p>.image {</p>
+				    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-image: url(example.svg);</p>
+				  }
+				}<br/><br/>
+				<b>在HTML标签中，给img标签自定义一个属性，给这个自定义属性设置一个png图片，以做备用，不过这种方法需要一定的脚本配合使用。</b><br/>
+				< img src="example.svg" data-png-fallback="example.png" /><br/><br/>
+				<b>需要的脚本</b><br/>
+				$(document).ready(function(){
+				  <p>if(!Modernizr.svg) {</p>
+				    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var images = $('img[data-png-fallback]');</p>
+				    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images.each(function(i) {</p>
+				      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).attr('src', $(this).data('png-fallback'));</p>
+				    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</p>
+				  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+				});
+			</dd>
+		</div>
+	</div>
+
+<footer>
+
+	<a href="personal_profile.com"> 刻录者：Pat </a>
+
+</footer>
+</body>

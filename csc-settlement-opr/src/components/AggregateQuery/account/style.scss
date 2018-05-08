@@ -1,0 +1,268 @@
+.account-box {
+
+}
+
+/* 交易明细 */
+.trade-box {
+
+    .bread-navbar {
+        padding: 0 20px;
+        height: 30px;
+        line-height: 30px;
+        border-bottom: #e1e4e6 solid 1px;
+        background-color: #f5f8fa;
+
+        .location-back {
+            a {
+                font-size: 14px;
+                color: #2e3133;
+                
+                span {
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .navbar-group {
+            margin-left: 20px;
+
+            li {
+                margin-right: 3px;
+            }
+
+            li:first-of-type {
+                color: #969899;
+            }
+        }
+    }
+
+    .trade-content {
+        padding: 0 20px;
+
+        .account-info {
+            height: 50px;
+            line-height: 50px;
+            font-size: 14px;
+
+            .info-group {
+                margin-right: 20px;
+                color: #666;
+
+                em {
+                    color: #333;
+                }
+            }
+        }
+
+        .menu-switch {
+            ul {
+                display: inline-block;
+                border: #d7dadb solid 1px;
+                border-right: none;
+
+                li {
+                    width: 95px;
+                    height: 32px;
+                    text-align: center;
+                    line-height: 32px;
+                    cursor: pointer;
+                    border-right: #d7dadb solid 1px;
+                    background: linear-gradient(to bottom, #f9fcfc, #e8eaeb);
+                }
+
+                li.active {
+                    border: #1fa3db solid 1px;
+                    color: white;
+                    background: none;
+                    background-color: #23b8f6;
+                }
+            }
+        }
+
+        .search-box {
+            margin: 20px auto;
+            font-size: 14px;
+
+            .search-group {
+                margin-right: 10px;
+    
+                span.name {
+                    color: #5c6366;
+                    line-height: 32px;
+                }
+    
+                .date-style {
+                    width: 220px;
+                }
+    
+                .section-group {
+                    span.pull-left {
+                        line-height: 32px;
+                        margin: 0 5px;
+                    }
+                }
+    
+                .line-style {
+                    input {
+                        height: 30px;
+                    }
+                }
+    
+                .h-droplist {
+                    width: 128px;
+                    border-radius: 5px;
+                }
+    
+                .dp-filter {
+                    margin-top: 10px;
+                }
+    
+                .dp-filter + span {
+                    display: block;
+                    margin-top: 5px;
+                    margin-left: 190px !important;
+    
+                    img {
+                        vertical-align: middle; 
+                    }
+                }
+    
+                .h-droplist .drop-i {
+                    line-height: 24px;
+                    padding-left: 30px;
+                }
+    
+                .h-droplist .pointer {
+                    img {
+                        vertical-align: middle;
+                    }
+                }
+            }
+    
+            .search-input-export {
+                margin-top: 10px;
+    
+                .search-input {
+                    width: 80%;
+                }
+    
+                .export {
+                    width: 72px;
+                    height: 32px;
+                }
+            }
+
+            .ant-select-lg .ant-select-selection--single {
+                height: 32px;
+            }
+
+            .ant-select-lg .ant-select-selection__rendered {
+                line-height: 32px;
+            }
+
+            .ant-select-selection-selected-value {
+                font-size: 14px;
+            }
+
+            .ant-input-lg {
+                height: 32px;
+                line-height: 20px;
+                font-size: 14px;
+                overflow: visible;
+            }
+        }
+        
+        .export-group {
+            margin-top: 20px;
+
+            .month-search {
+                ul > li {
+                    width: 75px;
+                    height: 25px;
+                    margin-right: 15px;
+                    text-align: center;
+                    line-height: 25px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    color: #333;
+                    border: #e1e4e6 solid 1px;
+                    border-radius: 3px;
+
+                    &.active {
+                        color: #23b8f6;
+                        border: #23b8f6 solid 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-trade-details {
+
+    .modal-left::after {
+        content: "";
+        width: 0;
+        height: 0;
+    }
+    
+    .package {
+        padding-bottom: 10px;
+        border-bottom: #ccc solid 1px;
+    }
+
+    .package:last-of-type {
+        border-bottom: none;
+    }
+
+    .details-group .row span {
+        width: auto;
+        max-width: 40%;
+        text-align: left;
+    }
+
+    .details-group .row em {
+        width: 60%;
+    }
+}
+.modal-details {
+    width: 680px !important;
+
+    .modal-right,
+    .modal-left {
+        position: relative;
+        width: 50%;
+    }
+
+    .modal-right {
+        padding-left: 30px;
+    }
+    .details-group {
+        h4 {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #2e3133;
+        }
+
+        .row {
+            margin-bottom: 10px;
+            font-size: 14px;
+
+            span {
+                width: 40%;
+                text-align: right;
+                color: #5c6366;
+            }
+
+            em {
+                width: 60%;
+                color: #2e3133;
+
+                &.active > cite{
+                    padding: 3px 10px;
+                    background-color: #e9f8fe;
+                }
+            }
+        }
+    }
+}

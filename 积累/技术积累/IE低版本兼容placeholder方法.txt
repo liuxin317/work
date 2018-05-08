@@ -1,0 +1,5 @@
+function placeholderSupport() {
+    return 'placeholder' in document.createElement('input');
+};
+
+if(!placeholderSupport()) // ÅĞ¶Ïä¯ÀÀÆ÷ÊÇ·ñ¼æÈİplaceholder;

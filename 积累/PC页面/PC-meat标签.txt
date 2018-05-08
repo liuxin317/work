@@ -1,0 +1,54 @@
+<meta http-equiv="X-UA-Compatible" content="IE=edge">解决部分兼容问题，用IE内核来渲染；
+
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"> 
+
+initial-scale-初始的缩放比例；
+
+maximum-scale允许用户缩放到的最大比例；
+
+user-scalabl-用户是否可以手动缩放；
+
+
+<meta name="Robots" content="all" />
+
+robots-机器人向导,用来告诉搜索引擎那些页面需要索引，那些页面不需要索引。参数有all、none、index、noindex等等；
+
+all: 文件将被检索，且页面上的链接可以被查询；
+
+none:文件将不被检索，且页面上的链接不可以被查询;
+
+index:文件将被检索;
+
+follow:页面上的链接可以被查询；
+
+noindex:文件将不被检索，但页面上的链接可以被查询;
+
+nofollow:文件将不被检索，页面上的链接可以被查询;
+
+
+keywords--关键词
+
+例子：＜meta name ="keywords" content="服务器,VPS主机,厦门云主机租用,服务器租用托管，厦门服务器租用托管"＞
+
+
+description--网站内容描述
+
+例子：＜meta name ="description" content="厦门凌众科技是十年老牌IDC提供商(lingzhong.net.cn)"＞
+
+
+<metaname="applicable-device"content="pc,mobile">
+表示页面同时适合在移动设备和PC上进行浏览;
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+
+
+
+
+
+
+

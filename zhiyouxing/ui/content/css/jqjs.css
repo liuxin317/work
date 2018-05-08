@@ -1,0 +1,121 @@
+.content {
+	margin-bottom: 1rem;
+}
+.img-box {
+	position: relative;
+}
+.img-box p {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: .54rem;
+	color: white;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+.img-box img {
+	width: 100%;
+	max-height: 2.5rem;
+}
+.info figure {
+	height: .98rem;
+	text-align: center;
+	line-height: .98rem;
+	border-bottom: .04rem solid #7ed321;
+}
+.info figure figcaption{
+	font-size: .36rem;
+	color: #404040;
+}
+.info .intro {
+	padding: .25rem;
+	text-align: justify;
+	font-size: .3rem;
+	color: #404040;
+	line-height: .45rem;
+}
+.listed-group li {
+	position: relative;
+	margin: .2rem .2rem .5rem;
+	padding: .1rem .1rem .5rem;
+	border: #7ed321 solid .03rem;
+}
+.listed-group li h6 {
+	position: absolute;
+	top: -.3rem;
+	left: 50%;
+	padding: 0 .15rem;
+	font-size: .36rem;
+	color: #585858;
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	background-color: #f7f7f7;
+}
+.img-group {
+	margin-top: .2rem;
+}
+.img-group img {
+	width: 30%;
+	height: 1.45rem;
+}
+.img-group .img-intro {
+	width: 65%;
+	text-align: justify;
+	font-size: .3rem;
+	color: #606060;
+	line-height: .4rem;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+	display: -moz-box;
+	-moz-box-orient: vertical;
+	-moz-line-clamp: 4;
+	display: -ms-box;
+	-ms-box-orient: vertical;
+	-ms-line-clamp: 4;
+	display: -o-box;
+	-o-box-orient: vertical;
+	-o-line-clamp: 4;
+}
+.more {
+	position: absolute;
+	bottom: .05rem;
+	right: .05rem;
+	font-size: .3rem;
+	color: #585858;
+}
+.paging {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
+	width: 100%;
+	height: .98rem;
+	margin: 0 auto;
+}
+
+.btn-style {
+	width: 50%;
+	height: .98rem;
+	line-height: .98rem;
+}
+
+.btn-group {
+	margin-top: 0;
+}
+
+.btn-group a {
+	border-radius: 0;
+}
+
+.btn-group a.a-style {
+	color: #7f7f7f;
+	background-color: white;
+}

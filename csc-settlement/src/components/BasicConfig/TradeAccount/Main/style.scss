@@ -1,0 +1,63 @@
+.trade {
+  .search-div-style {
+    margin: 10px 0px;
+    .search-input-style {
+      width: 160px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .search-btn-style {
+      margin-left: 10px;
+    }
+    .search-select-style {
+      width: 100px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .search-right-btn {
+      float: right;
+      margin-left: 10px;
+    }
+  }
+  .order-type-icon {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    float: left;
+    line-height: 34px;
+    text-align: center;
+    vertical-align: top;
+    /*border: solid 1px $primary-color;
+    border-radius: 50%;*/
+    background: url(../../../../imgs/delay.png) center center no-repeat;
+    /*transform: rotate(-45deg);*/
+
+    &.freeze {
+      background: url(../../../../imgs/freeze.png) center center no-repeat;
+      background-size: 100%;
+      /*color: #d92109;
+      border-color: #d92109;*/
+    }
+  }
+  .opreate-style {
+    padding: 0px 10px 0px 10px;
+  }
+
+}
+
+.modal-tip{
+  margin-bottom: 10px;
+}
+.modal-upload-input{
+  width: 250px;
+}
+
+//收支对象行表行点击效果
+.incomeTable{
+  .clickRow{
+    background-color: #CCFFFF !important;
+  }
+  .ant-table-tbody > tr:hover > td{
+    background-color: rgba(0,0,0,0) !important;
+  }
+}

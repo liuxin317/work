@@ -1,0 +1,27 @@
+查找nginx.conf文件路径 输入/usr/local/etc/nginx
+
+Nginx 启动命令是：sudo nginx
+
+nginx -s quit 退出
+
+nginx -s reload 重新加载
+
+nginx -t 测试nginx.conf配置
+
+Cd mardir conf.d 创建文件夹
+
+sudo vim default.conf 创建并编辑文件
+
+esc 切换在编辑状态
+
+:wq 保存文件并退出编辑状态vim
+
+#指令编辑nginx
+
+进去配置文件nginx.conf文件路径 cd ./
+
+vim nginx.conf 进入编辑状态
+
+i 可编辑
+
+esc 退出 :wq 保存

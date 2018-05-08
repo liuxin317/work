@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>web app适配解决方案 - rem</title>
+</head>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		html{
+			font-size: 40px;
+		}
+		.btn{
+			width: 6rem;
+			height: 3rem;
+			line-height: 3rem;
+			font-size: 1.2rem;
+			background: #060;
+			color: #fff;
+			border: none;
+			border-radius: .5rem;
+		}
+		/*推算出10px  = 1rem 在根元素（font-size = 10px的时候）；20px  = 1rem 在根元素（font-size = 20px的时候）；40px  = 1rem 在根元素（font-size = 40px的时候）；*/
+	</style>
+<body>
+	<button type="button" class="btn">确认</button>
+</body>
+</html>

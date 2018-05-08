@@ -1,0 +1,160 @@
+.add-keep-info {
+  .steps {
+    margin-bottom: 15px;
+  }
+  .step {
+    display: inline-block;
+    padding-left: 40px;
+    background: url(../../../../imgs/num-1.png) left center no-repeat;
+    line-height: 32px;
+
+    &.cur {
+      color: #23b8f6;
+    }
+    &.pass:nth-child(1) {
+      background-image: url(../../../../imgs/num-1-pass.png);;
+    }
+    &:nth-child(3) {
+      background-image: url(../../../../imgs/num-2-grey.png);;
+    }
+    &.cur:nth-child(3) {
+      background-image: url(../../../../imgs/num-2-blue.png);;
+    }
+    &.pass:nth-child(3) {
+      background-image: url(../../../../imgs/num-1-pass.png);;
+    }
+    &:nth-child(5) {
+      background-image: url(../../../../imgs/num-3-grey.png);;
+    }
+    &.cur:nth-child(5) {
+      background-image: url(../../../../imgs/num-3-blue.png);;
+    }
+  }
+  .step-arrow {
+    display: inline-block;
+    width: 80px;
+    height: 32px;
+    vertical-align: top;
+    background: url(../../../../imgs/step-arr.png) center no-repeat;
+  }
+
+  .sub-steps {
+    margin-bottom: 15px;
+  }
+  .sub-step {
+    display: inline-block;
+    width: 126px;
+    line-height: 24px;
+    padding-left: 30px;
+    background: url(../../../../imgs/grey-arr-l.png) 0 center no-repeat;
+    background-size: auto 100%;
+    background-color: #e1e4e6;
+    .arr-r {
+      display: inline-block;
+      width: 12px;
+      height: 24px;
+      float: right;
+      vertical-align: top;
+      background: url(../../../../imgs/grey-arr-r.png) 0 center no-repeat;
+      background-size: auto 100%;
+    }
+
+    &.cur {
+      color: #fff;
+      background-color: #23b8f6;
+      background-image: url(../../../../imgs/blue-arr-l.png);
+      >.arr-r {
+        background-image: url(../../../../imgs/blue-arr-r.png);
+      }
+    }
+    &:nth-child(1) {
+      background-image: none;
+    }
+  }
+
+  .row {
+    width: 500px;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  .desc {
+    display: inline-block;
+    width: 140px;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 28px;
+  }
+  .form-item {
+    display: inline-block;
+    width: 180px;
+    vertical-align: top;
+    line-height: 28px;
+    .ant-checkbox-group-item {
+      line-height: 28px;
+      display: block;
+    }
+  }
+  .time-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 28px;
+  }
+  .adds {
+    display: inline-block;
+    width: 160px;
+    padding-left: 10px;
+    line-height: 28px;
+  }
+  .desc-End{
+
+    height: 56px;
+    float: left;
+  }
+  .button-style {
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+    .quit-btn-style {
+      margin: 0 0 0 20px;
+    }
+    .confirm-btn-style {
+      margin: 0 20px 0 0;
+    }
+  }
+  .TreeSelect{
+    .ant-select-selection__rendered{
+      height: 30px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  /*上传*/
+  .avatar-uploader,
+  .avatar-uploader-trigger,
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+  .avatar-uploader {
+    display:inline-block;
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .avatar-uploader-trigger {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 28px;
+    color: #999;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

@@ -1,0 +1,159 @@
+/* 当前位置 */
+.column-title {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+}
+
+/* 表格样式 */
+.table-box {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.ant-table {
+    width: 100%;
+    border: #e1e4e6 solid 1px;
+    border-radius: 0;
+
+    table {
+        width: 101%;
+    }       
+
+    &-thead > tr > th {
+        font-size: 14px;
+        color: #666;
+        background: linear-gradient(to bottom, #f9fcfc, #e8eaeb);
+    }
+
+    &-tbody > tr {
+        background-color: #fafcfc;
+
+        td {
+            padding: 14px 8px;
+            font-size: 14px;
+            color: #2e3133;
+
+            .details {
+                color: #23b8f6;
+            }
+
+            .handle-button {
+                width: 60px;
+                height: 28px;
+                background-color: #23b8f6;
+                border: #23b8f6 solid 1px;
+            }
+
+            a {
+                color: #23b8f6;
+            }
+        }
+    }
+
+    &-tbody > tr:nth-child(2n) {
+        background-color: #f2f4f5;
+    }
+}
+
+.ant-table-thead > tr > th {
+    white-space: nowrap;
+}
+
+.ant-table-pagination.ant-pagination {
+    float: none;
+    text-align: center;
+}
+
+.ant-pagination-item-active {
+    background-color: #23b8f6;
+    border-color: #23b8f6;
+}
+
+.ant-pagination-item:not(.ant-pagination-item-active) {
+    background: linear-gradient(180deg,#fafafa,#ebebeb);
+}
+
+.ant-pagination-prev:not(.ant-pagination-disabled) .ant-pagination-item-link,
+.ant-pagination-next:not(.ant-pagination-disabled) .ant-pagination-item-link {
+    background: linear-gradient(180deg,#fafafa,#ebebeb);
+}
+
+.ant-pagination-item-active:focus a, 
+.ant-pagination-item-active:hover a, 
+.ant-pagination-item-active a {
+    color: #fff;
+}
+
+.tabs > .ant-radio-group {
+    border: solid 1px #d7dadb;
+    border-right: none;
+    border-bottom: none;
+}
+
+.ant-table-tbody > tr td {
+    padding: 14px 16px;
+}
+
+/* Modal弹窗样式 */
+.modal-box {
+    font-size: 16px;
+    color: #333;
+    
+    .ant-modal-header {
+        padding: 11px 24px;
+
+        .ant-modal-title {
+            text-align: center;
+            font-weight: normal;
+        }
+    }
+
+    .ant-modal-body {
+        padding: 10px 24px;
+    }
+    
+    .ant-modal-footer {
+        text-align: center;
+        border-top: none;
+
+        button {
+            width: 95px;
+            height: 32px;
+            margin-right: 16px;
+            font-size: 16px;
+        }
+
+        button:first-of-type {
+            background-color: #e1e4e6;
+            color: #2e3133;
+            border: 1px solid #e1e4e6;
+        }
+
+        button:last-of-type {
+            background-color: #23b8f6;
+            color: #fff;
+            border: 1px solid #23b8f6;
+        }
+    }
+
+    .ant-modal-close-x {
+        height: 45px;
+        line-height: 45px;
+    }
+}
+
+.ant-btn-primary {
+    background-color: #23b8f6;
+    border-color: #23b8f6;
+}
+
+/* 字体颜色 */
+.color-green {
+    color: #2de6c5;
+}
+
+.color-red {
+    color: #fa7171;
+}

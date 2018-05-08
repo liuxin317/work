@@ -1,0 +1,117 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	position: relative;
+	height: 100%;
+	-webkit-text-size-adjust: none;
+}
+body{
+	font-family:"Microsoft YaHei","LiHei Pro Medium","Tahoma","sans-serif";
+	font-size: 12px;
+}
+header,
+footer,
+section,
+article,
+aside,
+figure,
+figcaption,
+nav,
+menu{
+	display: block;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	font-size: 0;
+	border: none;
+}
+a,
+input,
+button,
+select{ 
+	outline: none;
+}
+table{ 
+	border-collapse: collapse; 
+	letter-spacing: 0;
+}
+i,
+em,
+address,
+cite,
+dfn,
+samp{ 
+	font-style: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{ 
+	font-weight: normal;
+}
+
+/*Public - start*/
+.container{ 
+	width: 1200px; 
+	margin: 0 auto;
+}
+.pull-left, 
+.list-inline li{ 
+	float: left;
+}
+.pull-right{ 
+	float: right;
+}
+.clear{ 
+	clear: both;
+}
+.clearfix:before,.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+.boxSiz{ 
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	-ms-box-sizing: border-box; 
+	-o-box-sizing: border-box;
+}
+.boxShadow {
+	-webkit-box-shadow: 0 2px 3px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 2px 3px rgba(0,0,0,.2);
+	-ms-box-shadow: 0 2px 3px rgba(0,0,0,.2);
+	-o-box-shadow: 0 2px 3px rgba(0,0,0,.2);
+	box-shadow: 0 2px 3px rgba(0,0,0,.2);
+}
+.lastNoMarg{ 
+	margin-right: 0 !important;
+}
+.block{ 
+	display: block; 
+}
+.ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.opacity {
+	-webkit-opacity: 0;
+	-moz-opacity: 0;
+	-o-opacity: 0;
+	-ms-opacity: 0;
+	opacity: 0;
+}
+/*Public - end*/

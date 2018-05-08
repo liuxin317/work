@@ -1,0 +1,64 @@
+@import "../../../vars";
+.addConfig {
+  .addConfig-left {
+    //border:solid  1px  red;
+    .common-left {
+      .h-droplist {
+        display: inline-block;
+        border-radius: 4px;
+        top: 8px;
+        width: 200px;
+        margin-left: 10px;
+      }
+      .common-left-input {
+
+        width: 200px;
+        margin-left: 10px;
+      }
+      float: right;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+
+  }
+  .common-right {
+    margin-left: 50px;
+  }
+}
+.CashTab{
+  .ant-radio-button-wrapper {
+    color: #000;
+    background-color: #999;
+  }
+  .ant-radio-button-wrapper-checked {
+    color: #000;
+    background-color: $primary-color;
+  }
+}
+//即付
+.CashPay{
+  .CashPayCommon{
+    font-size: larger;
+    margin: 10px 10px;
+  }
+  .CashPayDate{
+    margin-left: 130px;
+  }
+
+  .common-left {
+    .h-droplist {
+      display: inline-block;
+      border-radius: 4px;
+      top: 8px;
+      width: 200px;
+      margin-left: 10px;
+    }
+    .common-left-input {
+      width: 200px;
+      margin-left: 10px;
+    }
+    float: right;
+    margin-right: 100px;
+    margin-bottom: 20px;
+    }
+}

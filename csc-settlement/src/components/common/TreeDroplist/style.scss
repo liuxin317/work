@@ -1,0 +1,83 @@
+.h-droplist {
+	width: 3rem;
+	height: 0.3rem;
+	border: solid 1px #ccc;
+	position: relative;
+
+	> .cur-sel {
+		height: 0.28rem;
+		line-height: 0.28rem;
+	}
+	.cur-sel-text {
+		float: left;
+		width: calc(100% - 0.3rem);
+		height: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.toggle-btn {
+		float: left;
+		display: inline-block;
+		width: 0.3rem;
+		height: 0.28rem;
+		text-align: center;
+		transition: transform 0.2s ease;
+		&.expand {
+			transform: rotate(180deg);
+		}
+	}
+	> .dp-children {
+		position: absolute;
+		z-index: 5;
+		top: 0.33rem;
+		left: -1px;
+		width: 3rem;
+		max-height: 4rem;
+		padding: 0 0.05rem;
+		overflow: auto;
+		background-color: #fff;
+		box-shadow: 0 0 6px rgba(0,0,0,0.2);
+	}
+	.dp-children {
+		display: none;
+		&.expand {
+			display: block;
+		}
+	}
+	.drop-label {
+		white-space: nowrap;
+		cursor: pointer;
+		margin-left: 0.18rem;
+		&:hover {
+			background-color: #eceef5;
+		}
+	}
+	.drop-f {
+		line-height: 0.28rem;
+
+		> .dp-children {
+			padding-left: 0.18rem;
+		}
+		> .expand-btn {
+			display: inline-block;
+			float: left;
+			width: 0.18rem;
+			height: 0.28rem;
+			text-align: center;
+			transition: transform 0.2s ease;
+			&.expand {
+				transform: rotate(90deg);
+			}
+		}
+	}
+	.drop-label {
+		height: 0.28rem;
+	}
+	.drop-i {
+		margin: 0.02rem 0 0.02rem 0.18rem;
+		&.multi-seled {
+			background-color: #ccc;
+		}
+	}
+}

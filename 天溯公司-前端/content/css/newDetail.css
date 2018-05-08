@@ -1,0 +1,60 @@
+.column-box {
+	padding: 30px 40px 45px;
+}
+.detail-content h3 {
+	text-align: center;
+	font-size: 18px;
+	color: #333;
+}
+.detail-content .time {
+	font-size: 12px;
+	color: #999;
+	text-align: center;
+	line-height: 30px;
+}
+.detail-content .texts {
+	font-size: 14px;
+	color: #333;
+	line-height: 25px;
+}
+.fx {
+	margin-top: 50px;
+	font-size: 12px;
+	color: #999;
+	height: 25px;
+	line-height: 25px;
+	padding-bottom: 10px;
+	border-bottom: #f0f2f3 dashed 1px;
+}
+.fx a {
+	display: inline-block;
+	width: 150px;
+	height: 25px;
+	margin-left: 5px;
+	background-color: #f0f2f3;
+	text-align: center;
+	line-height: 25px;
+	font-size: 12px;
+	color: #666;
+}
+.article-listed p {
+	margin-top: 10px;
+	line-height: 20px;
+}
+.article-listed p span {
+	display: inline-block;
+	width: 4px;
+	height: 4px;
+	margin-right: 5px;
+	background-color: #ccc;
+	border-radius: 4px;
+	vertical-align: middle;
+}
+.article-listed p a {
+	font-size: 12px;
+	color: #999;
+	vertical-align: middle;
+}
+.article-listed p a:hover {
+	color: #004b98;
+}
