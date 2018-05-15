@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>class继承</title>
+</head>
+<body>
+  <script>
+    class Test {
+      constructor (x,y) {
+        this.x = x;
+        this.y = y;
+      }
+
+      static toString() {
+        console.log(`${ this.x }+${ this.y }`);
+        return `${ this.x }+${ this.y }`;
+      }
+
+      ['bar']() {
+        console.log('bar')
+        return `${ this.x }+${ this.y }`;
+      }
+    }
+
+    new Test(1,2)['bar']();
+
+    class A extends Test {
+      constructor(x, y, color) {
+        super(x,y)
+        this.color = color;
+      }
+
+      b () {
+        console.log('a' + super['bar']())
+      }
+    }
+
+    var a = new A("1", "2", "red");
+    a.b()
+  </script>
+</body>
+</html>

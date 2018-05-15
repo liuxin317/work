@@ -1,0 +1,29 @@
+v-model
+
+修饰符
+
+# .lazy
+
+在默认情况下，v-model在每次input事件触发后将输入框的值与数据同步（除了上述输入法组合文字时）你可以添加lazy修饰符，从而转变为使用change事件进行同步：
+
+在change时而非input时更新
+<input v-model.lazy="msg" />
+
+# .number 
+
+如果想自动将用户的输入值转为数值类型，可以给v-model添加number修饰符：
+
+<input v-model.number="msg" />
+
+# .trim
+
+如果要自动过滤用户输入的首尾空白字符，可以给v-model添加trim修饰符：
+
+<input v-model.trim="msg" />
+
+
+在组件上使用v-model
+
+如果你还不熟Vue组件，可以暂且跳过这里。
+
+HTML 原生的输入元素类型并不总能满足需求。幸好，Vue的组件系统允许你创建具有完全自定义行为且可复用的输入组件。这些输入组件甚至可以和v-model一起使用！

@@ -1,0 +1,24 @@
+Object.freeze(); // 阻止修改现有状态
+
+例如：
+
+var obj = {
+  foo: 'bar'
+}
+
+Object.freeze(obj)
+
+new Vue({
+  el: '#app',
+  data () {
+    return {
+      obj
+    }
+  }
+})
+
+<div id="app">
+  <p>{{ obj.foo }}</p>
+  <!-- 这里的 `obj.foo` 不会更新！ -->
+  <button @click="obj.foo = 'baz'">Change it</button>
+</div>

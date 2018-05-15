@@ -1,0 +1,3 @@
+vm.$watch('a', (newVal, oldVal) => {
+    // 这个回调将在vm.a发生改变时执行
+})

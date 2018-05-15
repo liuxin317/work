@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>四个子元素</title>
+</head>
+<style lang="">
+    .parent {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        border: 1px solid #000;
+    }
+    .parent .child {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+    }
+    li {
+        list-style-type: none;
+    }
+</style>
+<body>
+    <div class="parent">
+        <div class="child" style="float: left;">A</div>
+        <div class="child" style="float: left;">B</div>
+        <div style="clear: both;"></div>
+        <div class="child" style="float: right;">C</div>
+        <div class="child" style="float: right;">D</div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+</html>

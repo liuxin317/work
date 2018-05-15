@@ -1,0 +1,25 @@
+vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这么做除了使vue变得非常快之外。
+
+<template v-if="loginType === 'username'">
+  <label>Username</label>
+  <input placeholder="Enter your username">
+</template>
+<template v-else>
+  <label>Email</label>
+  <input placeholder="Enter your email address">
+</template>
+
+那么在上面的代码中切换loginType将不会清楚用户已经输入的内容。因为两个模块使用了相同的元素，<input>不会被替换掉-——仅仅是替换了它的placeholder.
+
+这样也不总是符合实际需求，所以vue为你提供了一种方式来表达这这两个元素是完全独立的，不要复用它们.只需要添加唯一值key属性即可:
+
+<template v-if="loginType === 'username'">
+  <label>Username</label>
+  <input placeholder="Enter your username" key="username-input">
+</template>
+<template v-else>
+  <label>Email</label>
+  <input placeholder="Enter your email address" key="email-input">
+</template>
+
+现在每次切换都是重新被渲染的。

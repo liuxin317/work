@@ -1,0 +1,14 @@
+在内联语句处理器中访问原始的DOM事件，可以用特殊变量$event把它传入方法：
+
+<button v-on:click="warn('Form cannot be submitted yet.', $event)">
+  Submit
+</button>
+
+// ...
+methods: {
+  warn: function (message, event) {
+    // 现在我们可以访问原生事件对象
+    if (event) event.preventDefault()
+    alert(message)
+  }
+}
