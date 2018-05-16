@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>localStorage兼容性</title>
+</head>
+<body>
+    <p id="local"></p>
+    
+    <script>
+      window.onload = function () {
+        window.localStorage.name = 'Hello LiuXin';
+        document.querySelector('#local').innerText = window.localStorage.name;
+      }
+    </script>
+</body>
+</html>
