@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="hello">
+    <meta name="keywords" content="a,b,c">
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>景区介绍</title>
+    <script type="text/javascript" src="content/js/cord.js"></script>
+    <link rel="stylesheet" type="text/css" href="content/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/audio.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/jqjs.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/jdjs.css" />
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div class="content">
+		<div class="img-box">
+			<p>青城山</p>
+			<img src="content/images/img02.jpg" alt="" />
+		</div>
+
+		<article class="info">
+			<figure>
+				<figcaption>青城山景点介绍</figcaption>
+			</figure>
+
+			<p class="intro">
+				青城山位于四川省成都平原西北部，东距成都68公里，距
+				都江堰仅10多公里。主峰老霄顶海拔1600米。青城山因其
+				四季常青，满目青翠，诸峰环峙，状若城廓而得名，素有"
+				青城天下幽"之美誉，与剑门之险、峨嵋之秀、夔门之雄齐
+				名。青城山分青城前山和青城后山。前山景色优美，文物
+				古迹众多；后山自然景物神秘绮丽、原始华美如世外桃源
+				青城山靠岷山雪岭，面向川西平原后山。前山景色优美，
+				古迹众多；后山自然景物神秘绮丽、原始华美如世外桃源
+				青城山靠岷山雪岭，面向川西平原。
+			</p>
+		</article>
+
+		<div class="audio-box">
+			<h4>讲解试听</h4>
+
+			<div class="audio-listed">
+				<ol>
+					<li data-src="content/audio/fukua.mp3" data-title="fukua" data-cover="content/images/img02.jpg">
+						<img src="content/images/audio_icon.png" alt="" />
+						天师洞
+					</li>
+					<li data-src="http://jq22com.qiniudn.com/jq22m1.mp3" data-title="china" data-cover="content/images/img02.jpg">
+						<img src="content/images/audio_icon.png" alt="" />
+						天师洞
+					</li>
+					<li data-src="http://jq22.qiniudn.com/2_01.mp3" data-title="笑脸" data-cover="content/images/img02.jpg">
+						<img src="content/images/audio_icon.png" alt="" />
+						天师洞
+					</li>
+					<li data-src="content/audio/fukua.mp3" data-title="fukua" data-cover="content/images/img02.jpg">
+						<img src="content/images/audio_icon.png" alt="" />
+						天师洞
+					</li>
+					<div class="clear"></div>
+				</ol>
+			</div>
+		</div>	
+	</div>
+
+	<div class="audio-fixed-box">
+		<div class="audio-container">
+			<div class="audio-view">
+				<div class="audio-cover"></div>
+				<div class="audio-body">
+					<h3 class="audio-title">未知歌曲</h3>
+					<div class="audio-backs">
+						<div class="audio-this-time">00:00</div>
+						<div class="audio-count-time">00:00</div>
+						<div class="audio-setbacks">
+							<i class="audio-this-setbacks">
+								<span class="audio-backs-btn"></span>
+							</i>
+							<span class="audio-cache-setbacks">
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="audio-btn" style="display: none;">
+					<div class="audio-select">
+						<div action="prev" class="icon-fast-backward"></div>
+						<div action="play" data-on="icon-play" data-off="icon-pause" class="icon-play"></div>
+						<div action="next" class="icon-fast-forward"></div>
+						<!--<div action="menu" class="icon-list-alt"></div>-->
+						<div action="volume" class="icon-volume-up">
+							<div class="audio-set-volume">
+								<div class="volume-box">
+									<i><span  class="audio-backs-btn"></span></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a class="audio-close" href="javascript: ">关闭</a>
+	</div>
+
+	<script type="text/javascript" src="content/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="content/js/audio.js"></script>
+	<script type="text/javascript" src="content/js/public.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			var audioFn;
+
+			$('.audio-listed li').on('click', function () {
+				var src = $(this).attr('data-src');
+				var cover = $(this).attr('data-cover');
+				var title = $(this).attr('data-title');
+
+				var setConfig = {
+					song : [
+						{
+							title : title,
+							src : src, // 文件路径
+							cover : cover // 封面图片;
+						}
+					],
+					error : function(meg){
+						console.log(meg);
+					}
+				};
+
+				audioFn = audioPlay(setConfig); // 预加载
+				audioFn.loadFile(true);
+				$('.audio-fixed-box').fadeIn(50);
+			})
+
+			$('.audio-close').on('click', function () {
+				audioFn.play(false);
+				$('.audio-fixed-box').fadeOut(50);
+			})
+		}
+	</script>
+</body>
+</html>

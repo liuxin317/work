@@ -1,0 +1,35 @@
+/*body {
+	padding-bottom: 1.6rem;
+}*/
+
+.content {
+	margin: 1rem .5rem 0;
+}
+
+.content .prompt {
+	font-size: .36rem;
+	color: #404040;
+}
+
+.content .input-group {
+	margin-top: .4rem;
+	line-height: .75rem;
+	text-align: center;
+}
+.content .input-group input {
+	width: 80%;
+	height: .75rem;
+	text-align: center;
+	font-size: .34rem;
+	color: #606060;
+	background-color: white;
+	border: none;
+}
+.content .input-group a {
+	width: 20%;
+	height: .75rem;
+	font-size: .32rem;
+	color: white;
+	border-radius: .1rem;
+	background-color: #7ed321;
+}

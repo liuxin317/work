@@ -1,0 +1,23 @@
+.content {
+	margin: .5rem;
+}
+
+.title {
+	font-size: .36rem;
+	color: #404040;
+}
+
+.input-group {
+	margin-top: .4rem;
+}
+
+.input-group input {
+	width: 100%;
+	height: .75rem;
+	font-size: .32rem;
+	color: #aaa5a5;
+	border: none;
+	padding-left: .2rem;
+	border-radius: .1rem;
+	background-color: white;
+}

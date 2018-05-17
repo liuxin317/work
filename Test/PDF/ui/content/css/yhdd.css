@@ -1,0 +1,36 @@
+.info {
+	text-align: center;
+	font-size: .36rem;
+	color: #606060;
+}
+.listed-group ul li em.active-color {
+	color: #c81c50;
+}
+.listed-group {
+	margin-bottom: .3rem;
+}
+.user-info {
+	margin-top: .25rem;
+	padding: .3rem;
+	background-color: white;
+}
+.user-img img {
+	width: .98rem;
+	height: .98rem;
+}
+.user-info-text {
+	width: 80%;
+}
+.info-text-top em {
+	font-size: .34rem;
+	color: #393939;
+}
+.info-text-top span {
+	font-size: .3rem;
+	color: #7ed321;
+}
+.zp-number {
+	margin-top: .2rem;
+	font-size: .3rem;
+	color: #606060;
+}

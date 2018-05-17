@@ -1,0 +1,60 @@
+.content {
+	margin-bottom: 80px;
+}
+
+.audio-box {
+	padding: .2rem;
+}
+
+.audio-box h4 {
+	display: inline-block;
+	padding-bottom: .1rem;
+	font-size: .36rem;
+	color: #585858;
+	border-bottom: #7ed321 solid 2px;
+}
+
+.audio-listed ol li {
+	width: 48%;
+	height: .75rem;
+	margin-top: .4rem;
+	line-height: .75rem;
+	padding-left: .45rem;
+	background-color: white;
+	font-size: .32rem;
+	color: #7f7f7f;
+	border-radius: .15rem;
+}
+
+.audio-listed ol li:nth-child(2n-1) {
+	float: left;
+}
+
+.audio-listed ol li:nth-child(2n) {
+	float: right;
+}
+
+.audio-listed ol li img {
+	width: .55rem;
+	height: .4rem;
+	vertical-align: middle;
+	margin-right: .2rem;
+}
+
+.audio-fixed-box {
+	display: none;
+}
+
+.audio-close {
+	position: absolute;
+	top: -20px;
+	right: 10px;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	border-radius: 35px;
+	color: white;
+	font-size: 12px;
+	background-color: #121212;
+}

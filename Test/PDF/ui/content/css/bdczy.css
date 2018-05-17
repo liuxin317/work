@@ -1,0 +1,35 @@
+/*body {
+	padding-bottom: 1.6rem;
+}*/
+
+.title {
+	font-size: .36rem;
+	color: #404040;
+	margin: .4rem 0 0 .3rem;
+}
+
+/*.content {
+	margin-bottom: 1.6rem;
+}*/
+
+.content .listed li {
+	margin-top: .4rem;
+	line-height: .9rem;
+	text-align: center;
+}
+
+.content .listed li p{
+	width: 85%;
+	height: .9rem;
+	font-size: .34rem;
+	color: #606060;
+	background-color: white;
+}	
+
+.content .listed li a {
+	width: 15%;
+	height: .9rem;
+	font-size: .34rem;
+	color: white;
+	background-color: #ff9414;
+}

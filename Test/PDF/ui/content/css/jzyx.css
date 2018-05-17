@@ -1,0 +1,38 @@
+.title {
+	margin-top: .75rem;
+	text-align: center;
+	font-size: .36rem;
+	color: #333;
+}
+
+.paging {
+	width: 95%;
+	height: .85rem;
+	margin: 0 auto;
+}
+
+.btn-style {
+	width: 45%;
+	height: .85rem;
+	line-height: .85rem;
+}
+
+.img-group {
+	margin-top: .4rem;
+	text-align: center;
+}
+
+.img-group img {
+	width: 1.6rem;
+}
+
+.intro {
+	margin-top: .45rem;
+	text-align: center;
+	font-size: .32rem;
+	color: #333;
+}
+
+.intro a {
+	color: #b5872c;
+}

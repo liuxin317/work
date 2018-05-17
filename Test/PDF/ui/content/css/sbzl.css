@@ -1,0 +1,26 @@
+.title {
+	height: 1rem;
+	text-align: center;
+	line-height: 1rem;
+	font-size: .36rem;
+	color: #404040;
+	border-bottom: #7ed321 solid 2px;
+}
+.listed-group-style {
+	background-color: #f3f3f3;
+}
+.listed-group-style .num-group {
+	margin-left: .5rem;
+}
+.intro-group {
+	margin-top: .2rem;
+	padding: .25rem;
+	background-color: white;
+}
+.intro-group p {
+	font-size: .3rem;
+	color: #969696;
+}
+.btn-group-style {
+	margin-top: .4rem;
+}

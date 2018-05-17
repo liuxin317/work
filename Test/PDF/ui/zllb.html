@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="hello">
+    <meta name="keywords" content="a,b,c">
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>租赁列表</title>
+    <script type="text/javascript" src="content/js/cord.js"></script>
+    <link rel="stylesheet" type="text/css" href="content/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/zllb.css" />
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div class="content">
+		<article class="info">
+			<div class="listed-group">
+				<ul>
+					<li>
+						<div class="img-group">
+							<img src="content/images/img03.png" alt="" class="pull-left" />
+							<div class="pull-right img-intro">
+								<p>租用点名称：镇江楼客栈</p>
+								<p>联系电话：9923399233</p>
+								<p>地址：镇江楼客栈镇江楼客栈镇江楼客栈镇江楼客栈</p>
+								<p>北斗智游星【 <em>99</em> 】台</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</li>
+
+					<li>
+						<div class="img-group">
+							<img src="content/images/img03.png" alt="" class="pull-left" />
+							<div class="pull-right img-intro">
+								<p>租用点名称：镇江楼客栈</p>
+								<p>联系电话：9923399233</p>
+								<p>地址：镇江楼客栈镇江楼客栈镇江楼客栈镇江楼客栈</p>
+								<p>北斗智游星【 <em>99</em> 】台</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</article>	
+	</div>
+	<div>
+		<button id="renderPdf">转换成PDF格式</button>
+	</div>
+
+	<script type="text/javascript" src="content/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="content/js/public.js"></script>
+	<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+	<script src="https://cdn.bootcss.com/jspdf/1.3.5/jspdf.debug.js"></script>
+	<script>
+		var downPdf = document.getElementById("renderPdf");  
+		
+		downPdf.onclick = function() {  
+			html2canvas(document.body, {  
+					onrendered:function(canvas) {  
+
+							var contentWidth = canvas.width;  
+							var contentHeight = canvas.height;  
+
+							//一页pdf显示html页面生成的canvas高度;  
+							var pageHeight = contentWidth / 592.28 * 841.89;  
+							//未生成pdf的html页面高度  
+							var leftHeight = contentHeight;  
+							//pdf页面偏移  
+							var position = 0;  
+							//a4纸的尺寸[595.28,841.89]，html页面生成的canvas在pdf中图片的宽高  
+							var imgWidth = 595.28;  
+							var imgHeight = 592.28/contentWidth * contentHeight;  
+
+							var pageData = canvas.toDataURL('image/jpeg', 1.0);  
+
+							var pdf = new jsPDF('', 'pt', 'a4');  
+
+							//有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89)  
+							//当内容未超过pdf一页显示的范围，无需分页  
+							if (leftHeight < pageHeight) {  
+									pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight );  
+							} else {  
+									while(leftHeight > 0) {  
+											pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)  
+											leftHeight -= pageHeight;  
+											position -= 841.89;  
+											//避免添加空白页  
+											if(leftHeight > 0) {  
+													pdf.addPage();  
+											}  
+									}  
+							}  
+
+							pdf.save('content.pdf');  
+					}  
+			})  
+		}  
+	</script>
+</body>
+</html>
