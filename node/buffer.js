@@ -33,7 +33,7 @@ console.log(len)
 console.log(buffer.toString('utf-8', 0, 3))
 
 //转换成JSON对象
-const json = JSON.stringify(buffer);
+const json = JSON.stringify(buf5);
 console.log(json)
 
 //缓冲区合并

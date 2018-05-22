@@ -1,7 +1,7 @@
 var fs = require('fs');
 var data = '';
 // 创建可读流
-const readerStream = fs.createReadStream('input.txt');
+const readerStream = fs.createReadStream('buffer.js');
 
 // 设置编码utf-8
 readerStream.setEncoding('UTF8');
