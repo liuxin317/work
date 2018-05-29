@@ -8,7 +8,7 @@ var store = new Vuex.Store({
     state: {
         count: 0,
         obj: {
-
+            
         },
         filter: [1,3,2,6,5,67,12,56]
     },
