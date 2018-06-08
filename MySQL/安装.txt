@@ -1,0 +1,31 @@
+1、下载安装包解压；（放在任何地方）
+
+2、添加全局变量path
+
+3、在根目录下创建my.int配置文件
+[mysqld]
+port=3309
+basedir=C:\Program Files\MySQL
+datadir=C:\Program Files\MySQL\Data 
+max_connections=200
+max_connect_errors=10
+character-set-server=utf8
+default-storage-engine=INNODB
+default_authentication_plugin=mysql_native_password
+[mysql]
+default-character-set=utf8
+[client]
+port=3309
+default-character-set=utf8
+
+4、初始化数据库 mysqld --initialize --console （记住root@localhost后面的密码）
+
+5、到bin下面安装  mysqld --install
+
+6、net start mysql 启动服务 net stop mysql关闭
+
+7、mysql -u root -p 登录输入密码
+
+8、ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';   修改密码
+
+

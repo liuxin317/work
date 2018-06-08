@@ -1,0 +1,19 @@
+#登录
+mysql -u root -p
+
+#创建数据库
+create DATABASE RUNOOB;
+mysqladmin -u root -p create RUNOOB;
+
+#删除数据库
+drop database <数据库名>;
+mysqladmin -u root -p drop RUNOOB;
+
+#选择数据库
+use <数据库名>;
+
+#数据类型
+https://www.runoob.com/mysql/mysql-data-types.html
+
+#创建数据表
+CREATE TABLE table_name (column_name column_type);
