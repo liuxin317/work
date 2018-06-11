@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>平台判断</title>
+</head>
+<body>
+  <h1>我是<span id="equipment"></span></h1>
+
+  <script>
+    window.onload = function () {
+      //平台、设备和操作系统
+      var system = {
+        win: false,
+        mac: false,
+        xll: false
+      };
+
+      //检测平台
+      var p = navigator.platform, equipment='';
+      system.win = p.indexOf("Win") == 0;
+      system.mac = p.indexOf("Mac") == 0;
+      system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+      
+      alert(p)
+
+      //跳转语句
+      if (system.win || system.mac || system.xll) {//转向后台登陆页面
+        // window.location.href = "index.html";
+        equipment = 'PC';
+      } else {
+        // window.location.href = "HomeIndex.aspx";//手机
+        equipment = 'WAP';
+      }
+
+      document.querySelector('#equipment').innerText = equipment;
+    }
+  </script>
+</body>
+</html>
