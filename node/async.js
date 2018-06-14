@@ -7,7 +7,7 @@ fs.readFile('input.txt', (error, data) => {
     return console.error(error)
   }
   console.log(data.toString())
-})
+});
 
 console.log('异步ending...');
 

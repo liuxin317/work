@@ -1,5 +1,5 @@
 window.onload = function () {
-  var data = [1000,1000,1000,1000,1000,1000]; // 后台返回数据;
+  var data = [1,2,3,4,10,1]; // 后台返回数据;
   createCanvas(data);
   window.status = "put your message here";
 };

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    (function(){
+      var re=/x/;
+      var i=0;
+      console.log(re);
+  
+      re.toString=function(){
+          return '第'+(++i)+'次打开控制台'
+      }
+    })();
+  </script>
+</body>
+</html>
